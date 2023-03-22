@@ -20,8 +20,8 @@ function Layout({ children }) {
   }
 
   return (
-    <div className="bg-[#EFE9E9] dark:bg-neutral-900 min-h-screen text-neutral-900 dark:text-[#EFE9E9] ">
-      <nav className="flex justify-end p-4 ">
+    <div className="bg-[#EFE9E9] dark:bg-neutral-900 min-h-screen text-neutral-900 dark:text-[#EFE9E9] p-6 ">
+      <nav className="flex justify-end ">
         <button onClick={handleDarkModeToggle}>
           {darkMode ? <BsMoon /> : <BsSun />}
         </button>
