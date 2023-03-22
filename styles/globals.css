@@ -5,3 +5,7 @@
   list-style-type: none;
   text-decoration: none;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
