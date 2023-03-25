@@ -14,9 +14,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-full min-h flex justify-center flex-col ">
+      {/* <main className="w-full min-h-[500px] bg-orange-400 flex justify-center flex-col "> */}
         <MenuItem />
-      </main>
+      {/* </main> */}
     </>
   );
 }

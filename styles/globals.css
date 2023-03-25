@@ -17,4 +17,77 @@
   .menu-item {
     @apply bg-white dark:bg-[#222222] w-full py-6 flex justify-center items-center rounded-md text-2xl md:text-3xl mt-4
   }
+
+
+  .text-effect-down {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    transition: transform .5s;
+    /* will be inherited */
+    /* transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); */
+    display: block;
+  }
+
+  .text-effect-down::after {
+    content: attr(data-after);
+    display: inline-block;
+    transform: translateY(100%);
+    position: absolute;
+    left: 0;
+    transition: inherit;
+    @apply text-yellowPrimary
+  }
+
+  .text-effect-down>span {
+    display: inline-block;
+    transform: translateY(0%);
+    transition: inherit;
+  }
+
+  .text-menuItem:hover .text-effect-down>span {
+    transform: translateY(-100%);
+  }
+
+  .text-menuItem:hover .text-effect-down::after {
+    transform: translateY(0%);
+  }
+
+
+
+
+
+  .text-effect-up {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    transition: transform .5s;
+    display: block;
+  }
+
+  .text-effect-up::after {
+    content: attr(data-after);
+    display: inline-block;
+    transform: translateY(-100%);
+    position: absolute;
+    left: 0;
+    transition: inherit;
+    @apply text-neutral-900 dark:text-whitePrimary
+  }
+
+  .text-effect-up>span {
+    display: inline-block;
+    transform: translateY(0%);
+    transition: inherit;
+  }
+
+  .text-menuItem:hover .text-effect-up>span {
+    transform: translateY(100%);
+  }
+
+  .text-menuItem:hover .text-effect-up::after {
+    transform: translateY(0%);
+  }
+
+
 }
