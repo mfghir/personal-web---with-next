@@ -21,7 +21,7 @@ function Layout({ children }) {
 
   return (
     <div className="bg-[#EFE9E9] dark:bg-neutral-900 h-full text-neutral-900 dark:text-[#EFE9E9] p-6 ">
-      <nav className="flex justify-end ">
+      <nav className="flex justify-end">
         <button onClick={handleDarkModeToggle}>
           {darkMode ? <BsMoon /> : <BsSun />}
         </button>

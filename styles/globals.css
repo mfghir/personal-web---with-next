@@ -24,8 +24,6 @@
     padding: 0;
     overflow: hidden;
     transition: transform .5s;
-    /* will be inherited */
-    /* transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); */
     display: block;
   }
 
@@ -52,9 +50,6 @@
   .text-menuItem:hover .text-effect-down::after {
     transform: translateY(0%);
   }
-
-
-
 
 
   .text-effect-up {
@@ -87,6 +82,12 @@
 
   .text-menuItem:hover .text-effect-up::after {
     transform: translateY(0%);
+  }
+
+
+
+  .bg-pages {
+    @apply bg-white dark:bg-[#222222]
   }
 
 

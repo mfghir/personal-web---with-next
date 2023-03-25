@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import Typewriter from "typewriter-effect";
-import React from "react";
 
 const MenuItem = () => {
   return (
     <section className="flex justify-center items-center lg:justify-between">
       <Image
-        className="hidden   lg:block  lg:w-2/6  "
+        className="hidden lg:block lg:w-2/6"
         src="/bg.jpg"
         alt="bg"
         width={800}
