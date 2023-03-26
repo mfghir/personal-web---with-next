@@ -91,4 +91,10 @@
   }
 
 
+  .btn-aboutMe{
+    @apply w-full rounded border-[1px] border-[#ddd] dark:border-[#333] text-[#888888] p-6 text-xl flex justify-center items-center duration-300 lg:hover:bg-yellowPrimary lg:hover:text-white
+
+  }
+
+
 }

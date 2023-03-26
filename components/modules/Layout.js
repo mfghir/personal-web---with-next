@@ -1,5 +1,5 @@
+import { Sun1,Moon } from "iconsax-react";
 import { useEffect, useState } from "react";
-import { BsMoon, BsSun } from "react-icons/bs";
 
 function Layout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
@@ -20,10 +20,10 @@ function Layout({ children }) {
   }
 
   return (
-    <div className="bg-[#EFE9E9] dark:bg-neutral-900 h-full text-neutral-900 dark:text-[#EFE9E9] p-6 ">
+    <div className="bg-[#EFE9E9] dark:bg-neutral-900 h-full text-neutral-900 dark:text-[#EFE9E9] p-3 ">
       <nav className="flex justify-end">
         <button onClick={handleDarkModeToggle}>
-          {darkMode ? <BsMoon /> : <BsSun />}
+          {darkMode ? <Moon /> : <Sun1 />}
         </button>
       </nav>
       <main className="h-full">{children}</main>
