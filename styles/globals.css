@@ -91,10 +91,16 @@
   }
 
 
-  .btn-aboutMe{
+  .btn-aboutMe {
     @apply w-full rounded border-[1px] border-[#ddd] dark:border-[#333] text-[#888888] p-6 text-xl flex justify-center items-center duration-300 lg:hover:bg-yellowPrimary lg:hover:text-white
-
   }
 
+  .tabs-aboutMe {
+    @apply lg:absolute top-0 right-0 w-full lg:bg-white lg:dark:bg-[#222222] z-30 lg:min-h-[300px] duration-300
+  }
+
+  .tabs-title-aboutMe{
+   @apply w-full bg-[#f2f2f2] dark:bg-[#151515] rounded border-[1px] border-[#ddd] dark:border-[#333] text-yellowPrimary p-6 text-xl flex justify-center items-center duration-300
+  }
 
 }
