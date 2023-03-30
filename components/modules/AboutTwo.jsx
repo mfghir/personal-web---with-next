@@ -32,42 +32,40 @@ const AboutTwo = () => {
         </button>
       </div>
 
-      <div className="lg:w-[70%] lg:relative lg:min-h-[400px] bg-red-500 " role="tablist">
+      <div className="lg:w-[70%] lg:relative lg:min-h-[400px]">
         {/*  Experience  */}
         <div
-          className={`tabs-aboutMe right-0 w-full lg:min-h-[400px]
-         ${openTab === 1 ? "z-30 top-7" : "z-0 -top-7"}
+          className={`tabs-aboutMe right-0 w-full lg:min-h-[400px] z-20 -top-5 scale-[0.8]
+         ${openTab === 1 ? "z-40 !top-8 !scale-100" : "z-10 -top-2 scale-[0.9]"}
+        
         `}
         >
-          <div
-            className="w-full bg-[#f2f2f2] dark:bg-[#151515] rounded border-[1px] border-[#ddd] dark:border-[#333] text-yellowPrimary p-6 text-xl flex justify-center items-center"
-            onClick={() => setOpenTab(1)}
-          >
+          <div className="tabs-title-aboutMe " onClick={() => setOpenTab(1)}>
             <Briefcase variant="Bold" />
             Experience
           </div>
 
           <div className="mt-4 lg:px-6">
-            <h3 className="font-semibold text-base text-[#656c6d] dark:text-white ">
+            <h3 className="font-semibold text-base text-grayText dark:text-white ">
               WEB DESIGNER - ENVATO
             </h3>
             <span className="flex items-center py-4 text-[#aaaaaa] text-xs">
               <Calendar size={16} variant="Bold" className="mr-2" /> 2015 - 2023
             </span>
-            <p className="leading-6 font-normal text-sm text-[#656c6d] dark:text-white">
+            <p className="leading-6 font-normal text-sm text-grayText dark:text-white">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               pretium orci sit amet mi ullamcorper
             </p>
           </div>
 
           <div className="mt-5 lg:px-6">
-            <h3 className="font-semibold text-base text-[#656c6d] dark:text-white ">
+            <h3 className="font-semibold text-base text-grayText dark:text-white ">
               WEB DESIGNER - ENVATO
             </h3>
             <span className="flex items-center py-4 text-[#aaaaaa] text-xs">
               <Calendar size={16} variant="Bold" className="mr-2" /> 2015 - 2023
             </span>
-            <p className="leading-6 font-normal text-sm text-[#656c6d] dark:text-white">
+            <p className="leading-6 font-normal text-sm text-grayText dark:text-white">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               pretium orci sit amet mi ullamcorper
             </p>
@@ -76,8 +74,9 @@ const AboutTwo = () => {
 
         {/*  Education  */}
         <div
-          className={`tabs-aboutMe mt-9 lg:mt-0 right-0 w-full lg:min-h-[400px]
-        ${openTab === 2 ? "z-30 top-6" : "z-20 -top-0"}
+          className={`tabs-aboutMe mt-9 lg:mt-0 right-0 w-full lg:min-h-[400px] -top-3 z-20  scale-[0.9]
+          ${openTab === 2 ? "z-40 !top-8 !scale-100" : " z-20  scale-[0.9]"}
+        
         `}
         >
           <div className="tabs-title-aboutMe" onClick={() => setOpenTab(2)}>
@@ -86,26 +85,26 @@ const AboutTwo = () => {
           </div>
 
           <div className="mt-4 lg:px-6">
-            <h3 className="font-semibold text-base text-[#656c6d] dark:text-white ">
+            <h3 className="font-semibold text-base text-grayText dark:text-white ">
               WEB DESIGNER - ENVATO
             </h3>
             <span className="flex items-center py-4 text-[#aaaaaa] text-xs">
               <Calendar size={16} variant="Bold" className="mr-2" /> 2015 - 2023
             </span>
-            <p className="leading-6 font-normal text-sm text-[#656c6d] dark:text-white">
+            <p className="leading-6 font-normal text-sm text-grayText dark:text-white">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               pretium orci sit amet mi ullamcorper
             </p>
           </div>
 
           <div className="mt-4 lg:px-6">
-            <h3 className="font-semibold text-base text-[#656c6d] dark:text-white ">
+            <h3 className="font-semibold text-base text-grayText dark:text-white ">
               WEB DESIGNER - ENVATO
             </h3>
             <span className="flex items-center py-4 text-[#aaaaaa] text-xs">
               <Calendar size={16} variant="Bold" className="mr-2" /> 2015 - 2023
             </span>
-            <p className="leading-6 font-normal text-sm text-[#656c6d] dark:text-white">
+            <p className="leading-6 font-normal text-sm text-grayText dark:text-white">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               pretium orci sit amet mi ullamcorper
             </p>
@@ -114,8 +113,9 @@ const AboutTwo = () => {
 
         {/*  Skill  */}
         <div
-          className={`tabs-aboutMe mt-9 lg:mt-0  right-0 w-full lg:min-h-[400px]
-        ${openTab === 3 ? "z-30 top-5" : "z-0  -top-8"}
+          className={`tabs-aboutMe mt-9 lg:mt-0  right-0 w-full lg:min-h-[400px] -top-[50px] z-10  scale-[0.8]
+          ${openTab === 3 ? "z-40 !top-8 !scale-100" : "z-10  scale-[0.8]"}
+ 
         `}
         >
           <div className="tabs-title-aboutMe" onClick={() => setOpenTab(3)}>
@@ -125,7 +125,7 @@ const AboutTwo = () => {
 
           <ul className="flex justify-between flex-wrap lg:px-6">
             <li className="w-[35%] mt-4">
-              <span className="text-[#656c6d] dark:text-white ">HTML</span>
+              <span className="text-grayText dark:text-white ">HTML</span>
 
               <p className="flex  items-center mt-2">
                 <span className="w-3 h-3 mr-1 block bg-yellowPrimary rounded-full"></span>
@@ -137,7 +137,7 @@ const AboutTwo = () => {
             </li>
 
             <li className="w-[35%] mt-4">
-              <span className="text-[#656c6d] dark:text-white ">CSS</span>
+              <span className="text-grayText dark:text-white ">CSS</span>
 
               <p className="flex items-center mt-2">
                 <span className="w-3 h-3 mr-1 block bg-yellowPrimary rounded-full"></span>
@@ -149,7 +149,7 @@ const AboutTwo = () => {
             </li>
 
             <li className="w-[35%] mt-4">
-              <span className="text-[#656c6d] dark:text-white ">Js</span>
+              <span className="text-grayText dark:text-white ">Js</span>
 
               <p className="flex items-center mt-2">
                 <span className="w-3 h-3 mr-1 block bg-yellowPrimary rounded-full"></span>
