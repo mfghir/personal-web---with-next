@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import MenuItem from "@/components/common/MenuItem";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +15,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* <section className="">
+        <div className="hidden lg:block lg:w-[30%] object-fill relative resize">
+          <Image
+            className="absolute top-0 left-0"
+            src="/bg.jpg"
+            alt="bg"
+            fill
+          />
+        </div> */}
+
         <MenuItem />
+      {/* </section> */}
     </>
   );
 }

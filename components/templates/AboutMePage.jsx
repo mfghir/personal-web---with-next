@@ -22,7 +22,7 @@ const AboutMePage = () => {
         <Image className="absolute top-0 left-0" src="/bg.jpg" alt="bg" fill />
       </div>
 
-      <section className="bg-pages lg:w-[70%] md:flex md:justify-between md:items-start md:flex-wrap p-4 lg:p-8 lg:overflow-y-scroll lg:relative">
+      <section className="section-container">
         <div className="  md:flex md:justify-between md:items-start md:flex-wrap lg:absolute">
           <h1 className="title flex justify-center items-center text-2xl lg:text-4xl w-full">
             <span className="mr-2">About</span>
