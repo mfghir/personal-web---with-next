@@ -108,4 +108,11 @@
     @apply bg-pages lg:w-[70%] md:flex md:justify-between md:items-start md:flex-wrap p-4 lg:p-8 lg:overflow-y-scroll lg:relative
   }
 
+  .portfolio-hover{
+    @apply absolute bg-yellowPrimary top-0 left-0 w-full h-full flex justify-center items-center flex-wrap opacity-0 duration-300
+  }
+  .portfolio-item:hover .portfolio-hover{
+    @apply opacity-100 
+  }
+
 }

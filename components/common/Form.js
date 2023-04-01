@@ -71,87 +71,163 @@ const Form = () => {
   }, [inpVal, touched]);
 
   return (
-    <section className="formStyles" touched={touched} inpVal={inpVal}>
-      <form onSubmit={handleSubmit}>
-        <div>
+    <section className="text-grayText dark:text-white" touched={touched} inpVal={inpVal}>
+      <form className="form" onSubmit={handleSubmit}>
+        <div className="group">
           <input
+            className="main-input"
             type="text"
             name="name"
             required
             value={inpVal.name}
             onChange={changeHandler}
             onFocus={touchedHandler}
-            placeholder="nameInp"
+            // placeholder="nameInp"
           />
-          {error.name && touched.name && <span>{error.name}</span>}
+          <span className="highlight-span"></span>
+          <label className="lebal-email">Name</label>
+          {error.name && touched.name && (
+            <span className="text-[#ff6464]">{error.name}</span>
+          )}
         </div>
 
-        <div>
+        <div className="group">
           <input
+            className="main-input"
             type="email"
             name="email"
             required
             value={inpVal.email}
             onChange={changeHandler}
             onFocus={touchedHandler}
-            placeholder="email"
           />
-          {error.email && touched.email && <span>{error.email}</span>}
+          <span className="highlight-span"></span>
+          <label className="lebal-email">Email</label>
+          {error.email && touched.email && (
+            <span className="text-[#ff6464]">{error.email}</span>
+          )}
         </div>
 
-        <div>
+        <div className="group">
           <textarea
+            className="main-input"
             type="text"
             name="message"
             required
             value={inpVal.message}
             onChange={changeHandler}
             onFocus={touchedHandler}
-            placeholder="messageInp"
             // maxlength="1000"
             // minlength="200"
-            rows="10"
+            rows="5"
           />
-          {error.message && touched.message && <span>{error.message}</span>}
+          <span className="highlight-span"></span>
+          <label className="lebal-email">Message...</label>
+          {error.message && touched.message && (
+            <span className="text-[#ff6464]">{error.message}</span>
+          )}
         </div>
 
-        <button type="submit">submitBtn</button>
+        <button type="submit">send</button>
       </form>
 
       <style jsx>{`
-        form div {
-          margin: 10px 0;
+        .group {
+          position: relative;
+          margin: 20px 0;
         }
 
-        form div span {
-          color: #ff6464;
-        }
-
-        form input,
-        form textarea {
+        .form {
           width: 100%;
-          outline: none;
-          border: 2px solid #ccc;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+       
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          position: relative;
+        }
 
-          border-radius: 8px;
-          padding: 5px 10px;
+        .form p {
+          padding-bottom: 20px;
+          font-size: 24px;
+          font-weight: bold;
+          letter-spacing: 0.5px;
+          color: white;
+        }
+
+       
+
+        .main-input {
+          width: 100%;
+
+          font-size: 16px;
+          padding: 10px 10px 10px 5px;
+          border: none;
+          border-bottom: 1px solid #6c6c6c;
+          background: transparent;
+          color: #ffffff;
+        }
+
+        .main-input:focus {
+          outline: none;
+          border-bottom-color: #daa520;
+        }
+
+        .lebal-email {
+          color: #999999;
+          font-size: 18px;
+          font-weight: normal;
+          position: absolute;
+          pointer-events: none;
+          left: 5px;
+          top: 10px;
+          transition: 0.2s ease all;
+          -moz-transition: 0.2s ease all;
+          -webkit-transition: 0.2s ease all;
+        }
+
+        .main-input:focus ~ .lebal-email,
+        .main-input:valid ~ .lebal-email {
+          top: -20px;
+          font-size: 14px;
+          color: #daa520;
+        }
+
+        .highlight-span {
+          position: absolute;
+          height: 60%;
+          width: 0px;
+          top: 25%;
+          left: 0;
+          pointer-events: none;
+          opacity: 0.5;
+        }
+
+        .main-input:focus ~ .highlight-span {
+          -webkit-animation: input-focus 0.3s ease;
+          animation: input-focus 0.3s ease;
+        }
+
+        @keyframes input-focus {
+          from {
+             {
+              /* background: #daa520; */
+            }
+          }
+
+          to {
+            width: 185px;
+          }
         }
 
         form button {
           width: 100%;
-          outline: none;
-          border: 2px solid #47a3da;
-
-          background: #ffffff;
-          padding: 5px 10px;
-          border-radius: 8px;
-
-          cursor: pointer;
-          transition: 0.4s;
-        }
-
-        form button:hover {
-          background: #47a3da;
+          padding: 10px 0;
+          background: #daa520;
+          margin-top: 10px;
           color: #ffffff;
         }
       `}</style>

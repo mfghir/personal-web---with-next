@@ -6,6 +6,7 @@ import {
   Map,
   Instagram,
   Send,
+  Dribbble,
 } from "iconsax-react";
 import Form from "../common/Form";
 import Link from "next/link";
@@ -77,7 +78,7 @@ const ContactPage = () => {
               <p className="flex justify-start items-center mt-3 text-grayText dark:text-white">
                 <Instagram className="mr-2" />
                 <Send className="mr-2 -rotate-45" />
-                <Map className="mr-2" />
+                <Dribbble className="mr-2" />
               </p>
             </div>
           </section>
