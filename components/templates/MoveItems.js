@@ -28,29 +28,30 @@
 
 
 
-import Interactivity from 'react-interactivity';
+// import { Interactive } from 'react-interactive';
 
-export default function MoveItems() {
-   return (
-      <div>
-         <Interactivity.div
-            className="item1"
-            style={{ position: 'absolute', top: '50px', left: '50px' }}
-            draggable
-            dragMove={(event, info) => {
-               event.target.style.left = info.point.x + 'px';
-               event.target.style.top = info.point.y + 'px';
-            }}
-         />
-         <Interactivity.div
-            className="item2"
-            style={{ position: 'absolute', top: '100px', left: '100px' }}
-            draggable
-            dragMove={(event, info) => {
-               event.target.style.left = (info.point.x + 50) + 'px';
-               event.target.style.top = (info.point.y + 50) + 'px';
-            }}
-         />
-      </div>
-   );
-}
+// export default function MoveItems() {
+//    return (
+//       <div>
+//          <Interactive
+//          as="div"
+//             className="item1"
+//             style={{ position: 'absolute', top: '50px', left: '50px' }}
+//             draggable
+//             dragMove={(event, info) => {
+//                event.target.style.left = info.point.x + 'px';
+//                event.target.style.top = info.point.y + 'px';
+//             }}
+//          />
+//          <Interactive
+//          as="div"
+//             className="item2 bg-orange-500 h-20 w-20"
+//             draggable
+//             dragMove={(event, info) => {
+//                event.target.style.left = (info.point.x + 50) + 'px';
+//                event.target.style.top = (info.point.y + 50) + 'px';
+//             }}
+//          />
+//       </div>
+//    );
+// }

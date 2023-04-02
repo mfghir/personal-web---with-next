@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import FilterBtn from "../modules/FilterBtn";
-import MoveItems from "./MoveItems";
+// import MoveItems from "./MoveItems";
 
 const PortfolioPage = ({ works }) => {
   const [filterWork, setFilterWork] = useState([]);
@@ -42,11 +42,11 @@ const PortfolioPage = ({ works }) => {
           setActiveFilter={setActiveFilter}
         />
 
-        <MoveItems />
+        {/* <MoveItems /> */}
 
-        <div className="bg-red-500 ">
+        <div className="bg-red-500 w-full flex flex-wrap justify-between">
           {filterWork.map((item) => (
-            <div className="portfolio-item  bg-blue-300 w-full h-[190px] my-5 relative">
+            <div className="portfolio-item  bg-blue-300 w-full h-[190px] my-5 relative md:w-[45%]">
               <img
                 className=" object-cover w-full h-full "
                 src={item.imgUrl}
