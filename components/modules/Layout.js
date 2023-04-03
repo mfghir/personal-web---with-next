@@ -20,10 +20,10 @@ function Layout({ children }) {
   }
 
   return (
-    <div className="bg-[#EFE9E9] dark:bg-neutral-900 min-h-screen h-full text-neutral-900 dark:text-[#EFE9E9] p-3 ">
+    <div className="bg-[#EFE9E9] dark:bg-neutral-900 min-h-screen h-[calc(100vh-48px)] overflow-y-hidden  text-neutral-900 dark:text-[#EFE9E9] p-3 ">
       <nav className="flex justify-end">
-        <button onClick={handleDarkModeToggle}>
-          {darkMode ? <Moon /> : <Sun1 />}
+        <button onClick={handleDarkModeToggle} className="hover:text-yellowPrimary duration-300">
+          {darkMode ? <Moon /> : <Sun1  />}
         </button>
       </nav>
       <main className="h-full">{children}</main>

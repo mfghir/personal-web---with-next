@@ -3,21 +3,22 @@ import { AiFillGithub, AiFillEye } from "react-icons/ai";
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
+
 import FilterBtn from "../modules/FilterBtn";
-// import MoveItems from "./MoveItems";
+
 
 const PortfolioPage = ({ works }) => {
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
 
   return (
-    <section className="min-h-screen h-full mt-2 p-2 md:p-4 lg:flex">
+    <section className="min-h-screen lg:h-screen h-full p-2 md:p-4 lg:flex lg:justify-between">
       <Link href="/" className="text-4xl right-9 top-16 fixed z-50">
         <CloseCircle className="text-grayText" />
       </Link>
 
-      <div className="hidden lg:block lg:w-[30%] object-fill relative resize">
+      <div className="hidden lg:block lg:w-[28%] object-fill relative resize">
         <Image className="absolute top-0 left-0" src="/bg.jpg" alt="bg" fill />
       </div>
 
@@ -42,13 +43,12 @@ const PortfolioPage = ({ works }) => {
           setActiveFilter={setActiveFilter}
         />
 
-        {/* <MoveItems /> */}
-
-        <div className="bg-red-500 w-full flex flex-wrap justify-between">
+        <div className="w-full flex flex-wrap justify-between">
           {filterWork.map((item) => (
-            <div className="portfolio-item  bg-blue-300 w-full h-[190px] my-5 relative md:w-[45%]">
+            <div className="portfolio-item my-5 relative w-full h-[190px]  md:w-[45%]  md:h-60 lg:w-[32%] lg:h-52">
               <img
-                className=" object-cover w-full h-full "
+                className="object-cover w-full h-full"
+                // src={`/${item.imgUrl}`}
                 src={item.imgUrl}
                 alt={item.title}
               />

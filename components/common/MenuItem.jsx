@@ -6,7 +6,7 @@ const MenuItem = () => {
   return (
     <section className="flex justify-center items-center lg:justify-between">
       <Image
-        className="hidden lg:block lg:w-2/6"
+        className="hidden lg:block lg:w-2/6 h-[calc(100vh-48px)]"
         src="/bg.jpg"
         alt="bg"
         width={800}

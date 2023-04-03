@@ -14,13 +14,13 @@ import Image from "next/image";
 
 const ContactPage = () => {
   return (
-    <section className="min-h-screen h-fit mt-2 p-2 md:p-4 lg:flex">
+    <section className="min-h-screen  p-2 md:p-4 lg:flex lg:justify-between h-[calc(100vh-56px)] ">
       <Link href="/" className="text-4xl right-9 top-16 fixed z-50">
         <CloseCircle className="text-grayText" />
       </Link>
 
-      <div className="hidden lg:block lg:w-[30%] object-fill relative resize">
-        <Image className="absolute top-0 left-0" src="/bg.jpg" alt="bg" fill />
+      <div className="hidden lg:block lg:w-[28%] object-fill relative resize">
+        <Image className="absolute top-0 left-0 " src="/bg.jpg" alt="bg" fill />
       </div>
 
       <section className="section-container">

@@ -13,12 +13,12 @@ import AboutTwo from "../modules/AboutTwo";
 
 const AboutMePage = () => {
   return (
-    <div className="min-h-screen h-fit mt-2 p-2 md:p-4 lg:flex">
+    <div className="min-h-screen h-fit p-2 md:p-4 lg:flex lg:justify-between">
       <Link href="/" className="text-4xl right-9 top-16 fixed z-50">
         <CloseCircle className="text-grayText" />
       </Link>
 
-      <div className="hidden lg:block lg:w-[30%] object-fill relative resize">
+      <div className="hidden lg:block lg:w-[28%] object-fill relative resize">
         <Image className="absolute top-0 left-0" src="/bg.jpg" alt="bg" fill />
       </div>
 

@@ -39,10 +39,10 @@ const Form = () => {
 
     emailjs
       .sendForm(
-        "service_mvy485h",
-        "template_3unplb2",
+        serv,
+        temp,
         e.target,
-        "ikAgJ0NQP9m1rJohf"
+        apiKey
       )
       .then(
         (result) => {
