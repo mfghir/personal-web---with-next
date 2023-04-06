@@ -1,11 +1,40 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import MenuItem from "@/components/common/MenuItem";
-import Image from "next/image";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Inter } from "@next/font/google";
+import { useTranslation } from "next-i18next";
+import {changeLanguage} from "i18next"
+
+import LocaleSwitcher from "@/components/language-switcher";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { t } = useTranslation();
+  const router = useRouter();
+
+  const changeLanguage = (language) => {
+    changeLanguage(language);
+  };
+
+  useEffect(() => {
+    const { locale } = router.query;
+    if (locale && ["en", "fa", "ko"].includes(locale)) {
+      changeLanguage(locale);
+    } else {
+      router.push("/", undefined, { locale: "en" });
+    }
+  }, []);
+
+  const handleClick = (language) => {
+    changeLanguage(language);
+    router.push("/", undefined, { locale: language });
+  };
+
+
   return (
     <>
       <Head>
@@ -15,18 +44,34 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <section className="">
-        <div className="hidden lg:block lg:w-[30%] object-fill relative resize">
-          <Image
-            className="absolute top-0 left-0"
-            src="/bg.jpg"
-            alt="bg"
-            fill
-          />
-        </div> */}
+      <div className="bg-emerald-200">
+        <div className="bg-red-200">
+          {/* <h1>locale : {locale}</h1> */}
+          {/* {locales.map((l) => (
+            <button key={l} onClick={handleclick(l)} className="mx-5">
+              {l}
+            </button> */}
+          {/* ))} */}
+        </div>
 
-        <MenuItem />
-      {/* </section> */}
+        <button onClick={() => handleClick("en")}>English</button>
+      <button onClick={() => handleClick("fa")}>فارسی</button>
+      <button onClick={() => handleClick("ko")}>한국어</button>
+        {/* <LocaleSwitcher /> */}
+        <h1>{t("home:about-us")}</h1>
+      </div>
+
+      <MenuItem />
     </>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  console.log("Locale:", locale);
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["home"])),
+    },
+  };
 }

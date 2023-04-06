@@ -1,8 +1,14 @@
+import { useTranslation } from "next-i18next";
+
 import Image from "next/image";
 import Link from "next/link";
 import Typewriter from "typewriter-effect";
 
-const MenuItem = () => {
+
+const MenuItem = ({}) => {
+  const { t } = useTranslation();
+
+
   return (
     <section className="flex justify-center items-center lg:justify-between">
       <Image
@@ -31,6 +37,8 @@ const MenuItem = () => {
               }}
             />
           </h3>
+
+         
         </div>
 
         <Link
@@ -83,3 +91,7 @@ const MenuItem = () => {
 };
 
 export default MenuItem;
+
+
+
+
