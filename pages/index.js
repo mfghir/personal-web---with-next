@@ -13,7 +13,6 @@ import LocaleSwitcher from "@/components/language-switcher";
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { t } = useTranslation();
 
   return (
     <>
@@ -24,42 +23,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-red-200">
-        {/* {locales.map((l) => (
-            <span key={l} className="mx-5">
-              <Link href={`/`} locale={l}>
-                {l}
-              </Link>
-            </span>
-          ))} */}
+     
 
-        <Link href={`/`} locale="fa" className="mx-5">
-          <Image
-            src="https://i.postimg.cc/4NgJFCQ9/iran-flag.png"
-            alt="iran-flag"
-            width={24}
-            height={24}
-          />
-        </Link>
-        <Link href={`/en`} locale="en" className="mx-5">
-          <Image
-            src="https://i.postimg.cc/DZGSLr7k/usa-flag.png"
-            alt="iran-flag"
-            width={24}
-            height={24}
-          />
-        </Link>
-        <Link href={`/ko`} locale="ko" className="mx-5">
-          <Image
-            src="https://i.postimg.cc/Y0fjyt4d/korea-flag.png"
-            alt="iran-flag"
-            width={24}
-            height={24}
-          />
-        </Link>
-      </div>
-
-      <h1>{t("home:about-us")}</h1>
 
       <MenuItem />
     </>
@@ -71,7 +36,7 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["home"])),
+      ...(await serverSideTranslations(locale, ["menu-item"])),
     },
   };
 }

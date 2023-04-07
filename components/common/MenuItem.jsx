@@ -5,14 +5,14 @@ import Link from "next/link";
 import Typewriter from "typewriter-effect";
 
 
-const MenuItem = ({}) => {
-  const { t } = useTranslation();
+const MenuItem = () => {
+  const { t } = useTranslation("menu-item");
 
 
   return (
     <section className="flex justify-center items-center lg:justify-between">
       <Image
-        className="hidden lg:block lg:w-2/6 h-[calc(100vh-48px)]"
+        className="hidden lg:block lg:w-2/6 h-[calc(100vh-80px)] pl-6"
         src="https://i.postimg.cc/JnMKt5w0/bg.jpg"
         alt="bg"
         width={800}
@@ -21,8 +21,10 @@ const MenuItem = ({}) => {
 
       <section className="flex flex-wrap justify-center lg:w-4/6">
         <div className="flex justify-center text-center items-center flex-col lg:w-[45%] lg:h-60 xl:h-72 lg:m-2">
-          <h1 className="text-xl text-neutral-900 dark:text-whitePrimary ">
-            HI THERE! I,M
+          <h1 className="text-xl text-neutral-900 dark:text-whitePrimary ">     
+      {/* {t("home:about-us")} */}
+      {t("nameOne")}
+
           </h1>
           <h2 className="text-4xl my-3 ">Fateme Ghafari</h2>
           <h3 className="text-yellowPrimary text-2xl">

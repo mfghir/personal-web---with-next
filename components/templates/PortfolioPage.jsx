@@ -13,12 +13,12 @@ const PortfolioPage = ({ works }) => {
   const [activeFilter, setActiveFilter] = useState("All");
 
   return (
-    <section className="min-h-screen lg:h-screen h-full p-2 md:p-4 lg:flex lg:justify-between">
+    <section className="min-h-screen lg:h-screen p-2 md:p-4 lg:flex lg:justify-between">
       <Link href="/" className="text-4xl right-9 top-16 fixed z-50">
         <CloseCircle className="text-grayText" />
       </Link>
 
-      <div className="hidden lg:block lg:w-[28%] object-fill relative resize">
+      <div className="hidden lg:block lg:w-2/6 object-fill relative resize h-[calc(100vh-80px)]">
         <Image className="absolute top-0 left-0" src="https://i.postimg.cc/JnMKt5w0/bg.jpg" alt="bg" fill />
       </div>
 
