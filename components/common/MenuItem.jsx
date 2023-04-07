@@ -13,7 +13,7 @@ const MenuItem = ({}) => {
     <section className="flex justify-center items-center lg:justify-between">
       <Image
         className="hidden lg:block lg:w-2/6 h-[calc(100vh-48px)]"
-        src="/bg.jpg"
+        src="https://i.postimg.cc/JnMKt5w0/bg.jpg"
         alt="bg"
         width={800}
         height={1200}

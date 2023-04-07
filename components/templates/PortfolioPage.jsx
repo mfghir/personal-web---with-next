@@ -19,7 +19,7 @@ const PortfolioPage = ({ works }) => {
       </Link>
 
       <div className="hidden lg:block lg:w-[28%] object-fill relative resize">
-        <Image className="absolute top-0 left-0" src="/bg.jpg" alt="bg" fill />
+        <Image className="absolute top-0 left-0" src="https://i.postimg.cc/JnMKt5w0/bg.jpg" alt="bg" fill />
       </div>
 
       <section className="section-container">

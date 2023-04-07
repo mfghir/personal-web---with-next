@@ -5,8 +5,9 @@ const nextConfig = {
     defaultLocale: "fa",
     locales: ["fa", "en", "ko"],
   },
-
- 
+  images: {
+    domains: ["i.postimg.cc"],
+  },
 };
 
 module.exports = nextConfig;

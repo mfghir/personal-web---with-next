@@ -1,39 +1,19 @@
 import Head from "next/head";
 import MenuItem from "@/components/common/MenuItem";
-
-import { Inter } from "@next/font/google";
 import { useTranslation } from "next-i18next";
-import {changeLanguage} from "i18next"
-
-import LocaleSwitcher from "@/components/language-switcher";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Image from "next/image";
+
+import Link from "next/link";
+
+import { Inter } from "@next/font/google";
+import LocaleSwitcher from "@/components/language-switcher";
+
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const { t } = useTranslation();
-  const router = useRouter();
-
-  const changeLanguage = (language) => {
-    changeLanguage(language);
-  };
-
-  useEffect(() => {
-    const { locale } = router.query;
-    if (locale && ["en", "fa", "ko"].includes(locale)) {
-      changeLanguage(locale);
-    } else {
-      router.push("/", undefined, { locale: "en" });
-    }
-  }, []);
-
-  const handleClick = (language) => {
-    changeLanguage(language);
-    router.push("/", undefined, { locale: language });
-  };
-
 
   return (
     <>
@@ -44,22 +24,42 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-emerald-200">
-        <div className="bg-red-200">
-          {/* <h1>locale : {locale}</h1> */}
-          {/* {locales.map((l) => (
-            <button key={l} onClick={handleclick(l)} className="mx-5">
-              {l}
-            </button> */}
-          {/* ))} */}
-        </div>
+      <div className="bg-red-200">
+        {/* {locales.map((l) => (
+            <span key={l} className="mx-5">
+              <Link href={`/`} locale={l}>
+                {l}
+              </Link>
+            </span>
+          ))} */}
 
-        <button onClick={() => handleClick("en")}>English</button>
-      <button onClick={() => handleClick("fa")}>فارسی</button>
-      <button onClick={() => handleClick("ko")}>한국어</button>
-        {/* <LocaleSwitcher /> */}
-        <h1>{t("home:about-us")}</h1>
+        <Link href={`/`} locale="fa" className="mx-5">
+          <Image
+            src="https://i.postimg.cc/4NgJFCQ9/iran-flag.png"
+            alt="iran-flag"
+            width={24}
+            height={24}
+          />
+        </Link>
+        <Link href={`/en`} locale="en" className="mx-5">
+          <Image
+            src="https://i.postimg.cc/DZGSLr7k/usa-flag.png"
+            alt="iran-flag"
+            width={24}
+            height={24}
+          />
+        </Link>
+        <Link href={`/ko`} locale="ko" className="mx-5">
+          <Image
+            src="https://i.postimg.cc/Y0fjyt4d/korea-flag.png"
+            alt="iran-flag"
+            width={24}
+            height={24}
+          />
+        </Link>
       </div>
+
+      <h1>{t("home:about-us")}</h1>
 
       <MenuItem />
     </>
