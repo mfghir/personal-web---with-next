@@ -115,4 +115,11 @@
     @apply opacity-100 
   }
 
+  .rtl {
+    direction: rtl;
+  }
+
+  .ltr {
+    direction: ltr;
+  }
 }

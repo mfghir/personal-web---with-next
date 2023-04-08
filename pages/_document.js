@@ -1,46 +1,16 @@
-// import { useTranslation } from "next-i18next";
-// import Document, { Html, Main, NextScript, Head } from "next/document";
-// import { useState } from "react";
+import { Html, Head, Main, NextScript } from "next/document";
+import { Noto_Sans_Arabic, Poppins, Gowun_Dodum } from "@next/font/google";
 
-// function MyDocument(props) {
-// const { locale } = props;
-
-
-
-
-
-
-// return (
-// <Html dir={locale === "fa" ? "rtl" : "ltr"} lang={locale}>
-// <Head></Head>
-// <body>
-// <Main />
-// <NextScript />
-// </body>
-// </Html>
-// );
-// }
-
-// // MyDocument.getInitialProps = async (ctx) => {
-// // const initialProps = await Document.getInitialProps(ctx);
-// // return { ...initialProps, locale: ctx?.locale || "fa" };
-// // };
-
-// export default MyDocument;
-
-
-
-
-import { Html, Head, Main, NextScript } from 'next/document'
-
-export default function Document() {
+export default function Document(props) {
+  const { locale } = props;
   return (
-    <Html lang="fa">
+    <Html lang={locale}>
+    {/* // <Html lang={locale} className="text-[${locale === "fa" ? Noto_Sans_Arabic ? locale=== "en" ?  Poppins : Gowun_Dodum}] `}> */}
       <Head />
       <body>
         <Main />
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }

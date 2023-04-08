@@ -1,16 +1,7 @@
 import Head from "next/head";
 import MenuItem from "@/components/common/MenuItem";
-import { useTranslation } from "next-i18next";
-
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Image from "next/image";
 
-import Link from "next/link";
-
-import { Inter } from "@next/font/google";
-import LocaleSwitcher from "@/components/language-switcher";
-
-// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 
