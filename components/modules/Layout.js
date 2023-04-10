@@ -1,9 +1,31 @@
+import { Noto_Sans_Arabic, Poppins, Gowun_Dodum } from "@next/font/google";
 import { Sun1, Moon } from "iconsax-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { useEffect, useState } from "react";
+
+const notoSansArabic = Noto_Sans_Arabic({
+  variable: "--font-noto-sans-arabic",
+  display: "swap",
+  subsets: ["arabic"],
+  weight: ["400"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const gowunDodum = Gowun_Dodum({
+  variable: "--font-gowun-dodum",
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 function Layout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
@@ -23,8 +45,6 @@ function Layout({ children }) {
   function handleDarkModeToggle() {
     setDarkMode(!darkMode);
   }
-
-
 
   return (
     <div className="bg-[#EFE9E9] dark:bg-neutral-900 min-h-screen lg:h-[calc(100vh-48px)] lg:overflow-y-hidden  text-neutral-900 dark:text-[#EFE9E9] p-3 ">
@@ -63,8 +83,18 @@ function Layout({ children }) {
           {darkMode ? <Moon /> : <Sun1 />}
         </button>
       </nav>
-      {/* <main className={`h-full font-[${locale === "fa" ? notoSansArabic : (locale === "en" ? poppins : gowunDodum)}]`}>{children}</main> */}
-      <main className={locale === "fa" ? "font-sans":""}>{children}</main>
+      <main
+        className={`h-full ${
+          locale === "fa"
+            ? notoSansArabic.variable
+            : locale === "en"
+            ? poppins.variable
+            : gowunDodum.variable
+        }`}
+      >
+        {children}
+      </main>
+      {/* <main className={locale === "fa" ? "font-notoSansArabic":""}>{children}</main> */}
     </div>
   );
 }

@@ -13,6 +13,7 @@ export default function Document(props) {
   return (
     <Html >
     <Head />
+    <link  href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+Arabic&family=Poppins&display=swap" />
       <body>
         <Main />
         <NextScript />
