@@ -42,8 +42,7 @@ const MenuItem = () => {
 
         {/* <Link href={`/${locale}/[dynamicFolder]`} as={`/${locale}/contact`}>  */}
         <Link
-        href={`/${locale}/[dynamicFolder]`} as={`/${locale}/about-me`}
-          // href={`/${locale}/about-me`}
+          href={`/about-me`}
           className={`menu-item text-menuItem lg:w-[45%] lg:h-60 xl:h-72 lg:m-2 transition-all ${
             locale === "fa" ? "rtl" : "ltr"
           }`}
@@ -60,7 +59,7 @@ const MenuItem = () => {
         </Link>
 
         <Link
-          href={`/${locale}/portfolio`}
+          href={`/portfolio`}
           className={`menu-item text-menuItem lg:w-[45%] lg:h-60 xl:h-72 lg:m-2 transition-all ${
             locale === "fa" ? "" : ""
           }`}
@@ -77,7 +76,7 @@ const MenuItem = () => {
         </Link>
 
         <Link
-          href={`/${locale}/contact`}
+          href={`/contact`}
           className={`menu-item text-menuItem lg:w-[45%] lg:h-60 xl:h-72 lg:m-2 transition-all ${
             locale === "fa" ? "rtl" : "ltr"
           }`}

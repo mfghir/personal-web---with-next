@@ -11,7 +11,7 @@ export default function Document(props) {
 
   // {/*  <Html lang={locale} className={`text-[${locale === "fa" ? Noto_Sans_Arabic ? locale=== "en" ?  Poppins : Gowun_Dodum}] `}> */}
   return (
-    <Html lang={locale}>
+    <Html >
     <Head />
       <body>
         <Main />
