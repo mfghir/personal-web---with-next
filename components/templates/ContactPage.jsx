@@ -12,15 +12,30 @@ import Form from "../common/Form";
 import Link from "next/link";
 import Image from "next/image";
 
+import { ImTelegram, ImGithub, ImCodepen, ImLinkedin2 } from "react-icons/im";
+import { BsGithub, BsTelegram, BsInstagram } from "react-icons/bs";
+import {
+  FiSend,
+  FiInstagram,
+  FiLinkedin,
+  FiGithub,
+  FiCodepen,
+  FiDribbble,
+} from "react-icons/fi";
 const ContactPage = () => {
   return (
-    <section className="min-h-screen  p-2 md:p-4 lg:flex lg:justify-between h-[calc(100vh-56px)] ">
+    <section className="min-h-screen h-full p-2 md:p-4 lg:flex lg:justify-between lg:h-[calc(100vh-56px)] ">
       <Link href="/" className="text-4xl right-9 top-16 fixed z-50">
         <CloseCircle className="text-grayText" />
       </Link>
 
       <div className="hidden lg:block lg:w-2/6 object-fill relative resize h-[calc(100vh-80px)]">
-        <Image className="absolute top-0 left-0 " src="https://i.postimg.cc/JnMKt5w0/bg.jpg" alt="bg" fill />
+        <Image
+          className="absolute top-0 left-0 "
+          src="https://i.postimg.cc/JnMKt5w0/bg.jpg"
+          alt="bg"
+          fill
+        />
       </div>
 
       <section className="section-container">
@@ -75,11 +90,58 @@ const ContactPage = () => {
               <h4 className="text-yellowPrimary text-xl font-semibold">
                 Socials
               </h4>
-              <p className="flex justify-start items-center mt-3 text-grayText dark:text-white">
-                <Instagram className="mr-2" />
-                <Send className="mr-2 -rotate-45" />
-                <Dribbble className="mr-2" />
-              </p>
+              <ul className="flex justify-start items-center mt-3 text-grayText dark:text-white">
+                <li className="mr-2 text-2xl hover:text-yellowPrimary duration-300">
+                  <a
+                    href="https://t.me/fatemeweb"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FiSend />
+                  </a>
+                </li>
+
+                <li className="mr-2 text-2xl hover:text-yellowPrimary duration-300">
+                  <a
+                    href="https://www.instagram.com/fatemeweb/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FiInstagram />
+                  </a>
+                </li>
+
+                <li className="mr-2 text-2xl hover:text-yellowPrimary duration-300">
+                  <a
+                    href="https://www.linkedin.com/in/fateme-ghafari"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FiLinkedin />
+                  </a>
+                </li>
+
+                <li className="mr-2 text-2xl hover:text-yellowPrimary duration-300">
+                  <a
+                    href="https://github.com/mfghir"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FiGithub />
+                  </a>
+                </li>
+                <li className="mr-2 text-2xl hover:text-yellowPrimary duration-300">
+                  <a
+                    href="https://codepen.io/miss_f_g/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FiCodepen />
+                  </a>
+                </li>
+
+                {/* FiDribbble */}
+              </ul>
             </div>
           </section>
 

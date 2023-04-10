@@ -2,9 +2,7 @@ import Head from "next/head";
 import MenuItem from "@/components/common/MenuItem";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-
 export default function Home() {
-
   return (
     <>
       <Head>
@@ -14,17 +12,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-     
-
-
       <MenuItem />
     </>
   );
 }
 
 export async function getStaticProps({ locale }) {
-  console.log("Locale:", locale);
-
   return {
     props: {
       ...(await serverSideTranslations(locale, ["menu-item"])),

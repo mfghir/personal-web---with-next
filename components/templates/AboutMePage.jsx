@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router";
+
 import {
   CloseCircle,
   Personalcard,
@@ -8,25 +9,34 @@ import {
   Like1,
   Happyemoji,
 } from "iconsax-react";
+
 import AboutOne from "../modules/AboutOne";
 import AboutTwo from "../modules/AboutTwo";
+import { useTranslation } from "next-i18next";
 
 const AboutMePage = () => {
+  const { t } = useTranslation("about-me");
+
   return (
     <div className="min-h-screen  p-2 md:p-4 lg:flex lg:justify-between">
       <Link href="/" className="text-4xl right-9 top-16 fixed z-50">
         <CloseCircle className="text-grayText" />
       </Link>
 
-      <div className="hidden lg:block lg:w-2/6 object-fill relative resize h-[calc(100vh-80px)]">
-        <Image className="absolute top-0 left-0" src="https://i.postimg.cc/JnMKt5w0/bg.jpg" alt="bg" fill />
+      <div className="hidden lg:block lg:w-2/6 object-fill relative resize">
+        <Image
+          className="absolute top-0 left-0"
+          src="https://i.postimg.cc/JnMKt5w0/bg.jpg"
+          alt="bg"
+          fill
+        />
       </div>
 
       <section className="section-container">
         <div className="  md:flex md:justify-between md:items-start md:flex-wrap lg:absolute">
           <h1 className="title flex justify-center items-center text-2xl lg:text-4xl w-full">
-            <span className="mr-2">About</span>
-            <span className="text-yellowPrimary">Me</span>
+            <span className="mr-2">{t("about")}</span>
+            <span className="text-yellowPrimary">{t("me")}</span>
           </h1>
 
           <div className="title-line flex justify-center items-center my-7 w-full">

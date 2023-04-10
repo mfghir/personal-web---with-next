@@ -39,8 +39,11 @@ const MenuItem = () => {
           </h3>
         </div>
 
+
+        {/* <Link href={`/${locale}/[dynamicFolder]`} as={`/${locale}/contact`}>  */}
         <Link
-          href={`/${locale}/about-me`}
+        href={`/${locale}/[dynamicFolder]`} as={`/${locale}/about-me`}
+          // href={`/${locale}/about-me`}
           className={`menu-item text-menuItem lg:w-[45%] lg:h-60 xl:h-72 lg:m-2 transition-all ${
             locale === "fa" ? "rtl" : "ltr"
           }`}

@@ -1,13 +1,18 @@
 import { User } from "iconsax-react";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 const AboutOne = () => {
+  const { t } = useTranslation("about-me");
+  const { locale } = useRouter();
+
   return (
-    <section className="pb-7 ">
+    <section className={`pb-7 ${locale === "fa" ? "rtl" : "ltr"}`} >
       <div className="flex items-center py-3 md:py-0 text-grayText dark:text-white">
         <span className="mr-2">
           <User variant="Bold" />
         </span>
-        <h3 className="text-lg font-semibold">Personal info</h3>
+        <h3 className="text-lg font-semibold">{t("personal-info")}</h3>
       </div>
 
       <p className="text-grayText dark:text-white text-sm md:mt-3 leading-8">
