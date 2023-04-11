@@ -1,8 +1,14 @@
 import { Briefcase, Calendar, Teacher } from "iconsax-react";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+
 import { useState } from "react";
 
 const AboutTwo = () => {
   const [openTab, setOpenTab] = useState(1);
+  const { locale } = useRouter();
+  const { t } = useTranslation("about-me");
+
   return (
     <>
       <div className="hidden lg:flex lg:flex-col w-1/5">
@@ -12,7 +18,7 @@ const AboutTwo = () => {
           }`}
           onClick={() => setOpenTab(1)}
         >
-          Experience
+          {t("experience")}
         </button>
         <button
           className={`btn-aboutMe px-4 py-2  mt-3 ${
@@ -20,7 +26,7 @@ const AboutTwo = () => {
           }`}
           onClick={() => setOpenTab(2)}
         >
-          Education
+          {t("education")}
         </button>
         <button
           className={`btn-aboutMe px-4 py-2  mt-3 ${
@@ -28,7 +34,7 @@ const AboutTwo = () => {
           }`}
           onClick={() => setOpenTab(3)}
         >
-          Skill
+          {t("skills")}
         </button>
       </div>
 
@@ -40,34 +46,38 @@ const AboutTwo = () => {
         
         `}
         >
-          <div className="tabs-title-aboutMe " onClick={() => setOpenTab(1)}>
-            <Briefcase variant="Bold" />
-            Experience
+          <div
+            className={`tabs-title-aboutMe ${locale === "fa" ? "rtl" : "ltr"}`}
+            onClick={() => setOpenTab(1)}
+          >
+            <Briefcase
+              variant="Bold"
+              className={locale === "fa" ? "ml-2" : "mr-2"}
+            />
+            {t("experience")}
           </div>
 
           <div className="mt-4 lg:px-6">
             <h3 className="font-semibold text-base text-grayText dark:text-white ">
-              WEB DESIGNER - ENVATO
+              {t("web-developer")}
             </h3>
             <span className="flex items-center py-4 text-[#aaaaaa] text-xs">
-              <Calendar size={16} variant="Bold" className="mr-2" /> 2015 - 2023
+              <Calendar size={16} variant="Bold" className="mr-2" /> {locale ==="fa"? "۱۳۹۸ - ۱۴۰۲" : "2019 - 2023"}
             </span>
             <p className="leading-6 font-normal text-sm text-grayText dark:text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              pretium orci sit amet mi ullamcorper
+            {t("web-developer-text")}
             </p>
           </div>
 
           <div className="mt-5 lg:px-6">
             <h3 className="font-semibold text-base text-grayText dark:text-white ">
-              WEB DESIGNER - ENVATO
+              {t("web-designer")}
             </h3>
             <span className="flex items-center py-4 text-[#aaaaaa] text-xs">
-              <Calendar size={16} variant="Bold" className="mr-2" /> 2015 - 2023
+              <Calendar size={16} variant="Bold" className="mr-2" />  {locale ==="fa"? "۱۴۰۱ - ۱۴۰۲" : "2022 - 2023"}
             </span>
             <p className="leading-6 font-normal text-sm text-grayText dark:text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              pretium orci sit amet mi ullamcorper
+            {t("web-designer-text")}
             </p>
           </div>
         </div>
@@ -79,9 +89,15 @@ const AboutTwo = () => {
         
         `}
         >
-          <div className="tabs-title-aboutMe" onClick={() => setOpenTab(2)}>
-            <Teacher variant="Bold" />
-            Education
+          <div
+            className={`tabs-title-aboutMe  ${locale === "fa" ? "rtl" : "ltr"}`}
+            onClick={() => setOpenTab(2)}
+          >
+            <Teacher
+              variant="Bold"
+              className={locale === "fa" ? "ml-2" : "mr-2"}
+            />
+            {t("education")}
           </div>
 
           <div className="mt-4 lg:px-6">
@@ -118,9 +134,15 @@ const AboutTwo = () => {
  
         `}
         >
-          <div className="tabs-title-aboutMe" onClick={() => setOpenTab(3)}>
-            <Teacher variant="Bold" />
-            Skills
+          <div
+            className={`tabs-title-aboutMe  ${locale === "fa" ? "rtl" : "ltr"}`}
+            onClick={() => setOpenTab(3)}
+          >
+            <Teacher
+              variant="Bold"
+              className={locale === "fa" ? "ml-2" : "mr-2"}
+            />
+            {t("skills")}
           </div>
 
           <ul className="flex justify-between flex-wrap lg:px-6">

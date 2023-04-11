@@ -7,7 +7,7 @@ const AboutOne = () => {
   const { locale } = useRouter();
 
   return (
-    <section className={`pb-7 ${locale === "fa" ? "rtl" : "ltr"}`} >
+    <section className={`pb-7 ${locale === "fa" ? "rtl" : "ltr"}`}>
       <div className="flex items-center py-3 md:py-0 text-grayText dark:text-white">
         <span className="mr-2">
           <User variant="Bold" />
@@ -16,75 +16,73 @@ const AboutOne = () => {
       </div>
 
       <p className="text-grayText dark:text-white text-sm md:mt-3 leading-8">
-        I'm a Freelance Web Designer & Developer based in Moscow, Russia, I have
-        serious passion for UI effects, animations and creating intuitive, with
-        over a decade of experience.
+        {t("desc")}
       </p>
 
       <ul className="lg:flex lg:justify-between">
         <div>
           <li className="text-[#222] dark:text-white font-bold text-sm my-3">
-            First Name:
-            <span className="text-grayText dark:text-[#eee] font-normal ml-3">
-              Fateme
+            {t("first-name")} :
+            <span className="text-grayText dark:text-[#eee] font-normal ml-3 mx-2">
+              {t("first-name-text")}
             </span>
           </li>
 
           <li className="text-[#222] dark:text-white font-bold text-sm my-3">
-            Last Name:
-            <span className="text-grayText dark:text-[#eee] font-normal ml-3">
-              Ghafari
+            {t("last-name")} :
+            <span className="text-grayText dark:text-[#eee] font-normal ml-3 mx-2">
+              {t("last-name-text")}
             </span>
           </li>
 
           <li className="text-[#222] dark:text-white font-bold text-sm my-3">
-            Date of birth:
-            <span className="text-grayText dark:text-[#eee] font-normal ml-3">
-              5 September 1998
+            {t("date-of-birth")} :
+            <span className="text-grayText dark:text-[#eee] font-normal ml-3 mx-2">
+              {t("date-of-birth-text")}
             </span>
           </li>
 
           <li className="text-[#222] dark:text-white font-bold text-sm my-3">
-            Nationality:
-            <span className="text-grayText dark:text-[#eee] font-normal ml-3">
-              Iranian
+            {t("nationality")} :
+            <span className="text-grayText dark:text-[#eee] font-normal ml-3 mx-2">
+              {t("nationality-text")}
             </span>
           </li>
 
           <li className="text-[#222] dark:text-white font-bold text-sm my-3">
-            Freelance:
-            <span className="text-grayText dark:text-[#eee] font-normal ml-3">
-              Available
+            {t("freelance")} :
+            <span className="text-grayText dark:text-[#eee] font-normal ml-3 mx-2">
+              {t("freelance-text")}
             </span>
           </li>
         </div>
 
         <div>
           <li className="text-[#222] dark:text-white font-bold text-sm my-3">
-            Phone:
-            <span className="text-grayText dark:text-[#eee] font-normal ml-3">
-              +922 458 5055
+            {t("phone")} :
+            <span className={`text-grayText dark:text-[#eee] font-normal ml-3 mx-2 inline-flex flex-row-reverse ${locale === "fa" ? "ltr" : ""}`}>
+              {locale === "fa" ? "+۹۸ ۹۲۲ ۴۵۸ ۵۰۵۵" :"+98 922 458 5055"}
             </span>
           </li>
 
           <li className="text-[#222] dark:text-white font-bold text-sm my-3">
-            Address:
-            <span className="text-grayText dark:text-[#eee] font-normal ml-3">
-              Tehran, Iran
+            {t("address")} :
+            <span className="text-grayText dark:text-[#eee] font-normal ml-3 mx-2">
+              {t("address-text")}
             </span>
           </li>
 
           <li className="text-[#222] dark:text-white font-bold text-sm my-3">
-            Email:
-            <span className="text-grayText dark:text-[#eee] font-normal ml-3">
+            {t("email")} :
+            <span className={`text-grayText dark:text-[#eee] font-normal ml-3 mx-2 inline-flex flex-row-reverse ${locale === "fa" ? "ltr" : ""}`}>
               [fatemeghafari77]@gmail.com
             </span>
           </li>
 
           <li className="text-[#222] dark:text-white font-bold text-sm my-3">
-            Spoken Langages:
-            <span className="text-grayText dark:text-[#eee] font-normal ml-3">
-              Farsi, English
+            {t("spoken-langages")} :
+            <span className="text-grayText dark:text-[#eee] font-normal ml-3 mx-2">
+              {t("spoken-langages-text")}
             </span>
           </li>
         </div>

@@ -16,6 +16,7 @@ import { useTranslation } from "next-i18next";
 
 const AboutMePage = () => {
   const { t } = useTranslation("about-me");
+  const { locale } = useRouter();
 
   return (
     <div className="min-h-screen  p-2 md:p-4 lg:flex lg:justify-between">
@@ -34,8 +35,8 @@ const AboutMePage = () => {
 
       <section className="section-container">
         <div className="  md:flex md:justify-between md:items-start md:flex-wrap lg:absolute">
-          <h1 className="title flex justify-center items-center text-2xl lg:text-4xl w-full">
-            <span className="mr-2">{t("about")}</span>
+          <h1 className={`title flex justify-center items-center text-2xl lg:text-4xl w-full ${locale === "fa" ? "rtl" : "ltr"}`}>
+            <span className="mr-2">{t("about")}</span> 
             <span className="text-yellowPrimary">{t("me")}</span>
           </h1>
 

@@ -1,1 +1,30 @@
-{"about":"~에 대한","me":"나","personal-info":"명세서"}
+{
+    "about": "나에",
+    "me": "대해",
+    "personal-info": "명세서",
+    "desc": "저는 이란 테헤란에 위치한 프리랜스 웹 디자이너 및 개발자입니다. 저는 웹 사이트 및 사용자 인터페이스를 개발하고 만드는 것을 좋아하며, 이 분야에서 2년 이상의 경험이 있습니다. 제 포트폴리오를 확인하시고 의견을 소통 채널을 통해 공유해 주시면 감사하겠습니다.",
+    "first-name": "이름",
+    "first-name-text": "이름",
+    "last-name": "성",
+    "last-name-text": "가파리",
+    "date-of-birth": "생년월일",
+    "date-of-birth-text": "1998년 9월 5일",
+    "nationality": "국적",
+    "nationality-text": "이란인",
+    "freelance": "프리랜서",
+    "freelance-text": "가능",
+    "phone": "전화번호",
+    "address": "주소",
+    "address-text": "이란, 테헤란",
+    "email": "이메일",
+    "spoken-langages": "구사 언어",
+    "spoken-langages-text": "페르시아어, 영어",
+    "experience": "경험",
+    "education": "교육",
+    "skills": "기술",
+
+    "web-developer":"웹 개발자",
+"web-developer-text":"2019년에 테란 기술 학원에서 학습을 시작했습니다.",
+"web-designer":"웹 디자이너",
+"web-designer-text":"2002년 이 분야를 학습하기 시작했습니다."
+}
