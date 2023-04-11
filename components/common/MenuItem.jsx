@@ -86,8 +86,8 @@ const MenuItem = () => {
               <span>{t("get")}</span>
             </button>
 
-            <button className="text-effect-up" data-after="in-touch">
-              <span className="text-yellowPrimary ">{t("in-tuoch")}</span>
+            <button className="text-effect-up" data-after={t("in-touch")}>
+              <span className="text-yellowPrimary ">{t("in-touch")}</span>
             </button>
           </div>
         </Link>
