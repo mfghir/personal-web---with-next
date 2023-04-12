@@ -1,16 +1,10 @@
-import React, { useEffect } from "react";
-
-// import { useQuery } from "react-query";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const FilterBtn = ({ setActiveFilter, activeFilter, setFilterWork, works }) => {
-
-
-  // const { data, isLoading, isError, error } = useQuery("portfolios", () =>
-  //   fetch("https://mfghir-personal-web-api.vercel.app/PortfoliosData").then(
-  //     (res) => res.json()
-  //   )
-  // );
-
+  const { t } = useTranslation("portfolio");
+  const { locale } = useRouter();
 
   useEffect(() => {
     if (activeFilter === "All") {
@@ -21,24 +15,84 @@ const FilterBtn = ({ setActiveFilter, activeFilter, setFilterWork, works }) => {
     setFilterWork(filtered);
   }, [activeFilter, setFilterWork, works]);
 
-
-
-  // if (isLoading) return <Loading />
-
-  // if (isError) return <div>Error: {error.message}</div>;
-
-
   return (
-    <div className="bg-pink-400 flex">
-      {["All", "Web", "React", "Js","Nextjs", "UI"].map((item, index) => (
+    <div
+      className={` w-full flex flex-wrap ${locale === "fa" ? "rtl" : "ltr"} `}
+    >
+      {/* {[ t("all"), t("web"), t("react"), t("js"), t("nextjs") , t("ui") ,t("etc") ].map((item, index) => (
         <div
           key={index}
-          onClick={() => setActiveFilter(item)}
-          className={`mr-4 ${activeFilter === item ? "text-yellowPrimary" : ""}`}
+          onClick={() => setActiveFilter(t(`${item}`))}
+          className={`mr-4 cursor-pointer hover:text-yellowPrimary duration-300 ${
+            activeFilter === item ? "text-yellowPrimary" : ""
+          }`}
         >
           {item}
         </div>
-      ))}
+      ))} */}
+
+      <div
+        onClick={() => setActiveFilter("All")}
+        className={`mr-4 cursor-pointer hover:text-yellowPrimary duration-300 ${
+          activeFilter === "All" ? "text-yellowPrimary" : ""
+        }`}
+      >
+        {t("all")}
+      </div>
+
+      <div
+        onClick={() => setActiveFilter("Web")}
+        className={`mr-4 cursor-pointer hover:text-yellowPrimary duration-300 ${
+          activeFilter === "Web" ? "text-yellowPrimary" : ""
+        }`}
+      >
+        {t("web")}
+      </div>
+
+      <div
+        onClick={() => setActiveFilter("Js")}
+        className={`mr-4 cursor-pointer hover:text-yellowPrimary duration-300 ${
+          activeFilter === "Js" ? "text-yellowPrimary" : ""
+        }`}
+      >
+        {t("js")}
+      </div>
+
+      <div
+        onClick={() => setActiveFilter("React")}
+        className={`mr-4 cursor-pointer hover:text-yellowPrimary duration-300 ${
+          activeFilter === "React" ? "text-yellowPrimary" : ""
+        }`}
+      >
+        {t("react")}
+      </div>
+
+      <div
+        onClick={() => setActiveFilter("Nextjs")}
+        className={`mr-4 cursor-pointer hover:text-yellowPrimary duration-300 ${
+          activeFilter === "Nextjs" ? "text-yellowPrimary" : ""
+        }`}
+      >
+        {t("nextjs")}
+      </div>
+
+      <div
+        onClick={() => setActiveFilter("UI")}
+        className={`mr-4 cursor-pointer hover:text-yellowPrimary duration-300 ${
+          activeFilter === "UI" ? "text-yellowPrimary" : ""
+        }`}
+      >
+        {t("ui")}
+
+        <div
+          onClick={() => setActiveFilter("Etc")}
+          className={`mr-4 cursor-pointer hover:text-yellowPrimary duration-300 ${
+            activeFilter === "Etc" ? "text-yellowPrimary" : ""
+          }`}
+        >
+          {t("etc")}
+        </div>
+      </div>
     </div>
   );
 };

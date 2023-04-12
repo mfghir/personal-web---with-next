@@ -6,11 +6,15 @@ import Link from "next/link";
 import { useState } from "react";
 
 import FilterBtn from "../modules/FilterBtn";
+import { useTranslation } from "next-i18next";
+// import { useRouter } from "next/router";
 
 
 const PortfolioPage = ({ works }) => {
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
+  const { t } = useTranslation("portfolio");
+  // const { locale } = useRouter();
 
   return (
     <section className="min-h-screen lg:h-screen p-2 md:p-4 lg:flex lg:justify-between">
@@ -24,8 +28,8 @@ const PortfolioPage = ({ works }) => {
 
       <section className="section-container">
         <h1 className="title flex justify-center items-center text-2xl lg:text-4xl w-full">
-          <span className="mr-2">My</span>
-          <span className="text-yellowPrimary">Portfolio</span>
+          <span className="mr-2">{t("my")}</span>
+          <span className="text-yellowPrimary">{t("portfolio")}</span>
         </h1>
 
         <div className="title-line flex justify-center items-center my-7 w-full">

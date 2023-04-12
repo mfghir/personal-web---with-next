@@ -40,7 +40,6 @@ const MenuItem = () => {
         </div>
 
 
-        {/* <Link href={`/${locale}/[dynamicFolder]`} as={`/${locale}/contact`}>  */}
         <Link
           href={`/about-me`}
           className={`menu-item text-menuItem lg:w-[45%] lg:h-60 xl:h-72 lg:m-2 transition-all ${
@@ -48,11 +47,11 @@ const MenuItem = () => {
           }`}
         >
           <div className="flex ">
-            <button className="text-effect-down mr-2" data-after={t("about")}>
+            <button className="text-effect-down" data-after={t("about")}>
               <span>{t("about")}</span>
             </button>
 
-            <button className="text-effect-up" data-after={t("me")}>
+            <button className="text-effect-up mx-2" data-after={t("me")}>
               <span className="text-yellowPrimary">{t("me")}</span>
             </button>
           </div>
@@ -65,7 +64,7 @@ const MenuItem = () => {
           }`}
         >
           <div className="flex ">
-            <button className="text-effect-down mr-2" data-after={t("my")}>
+            <button className="text-effect-down mx-2" data-after={t("my")}>
               <span>{t("my")}</span>
             </button>
 
@@ -82,7 +81,7 @@ const MenuItem = () => {
           }`}
         >
           <div className="flex justify-between">
-            <button className="text-effect-down mr-2" data-after={t("get")}>
+            <button className="text-effect-down mx-2" data-after={t("get")}>
               <span>{t("get")}</span>
             </button>
 
