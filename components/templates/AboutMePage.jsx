@@ -35,8 +35,12 @@ const AboutMePage = () => {
 
       <section className="section-container">
         <div className="  md:flex md:justify-between md:items-start md:flex-wrap lg:absolute">
-          <h1 className={`title flex justify-center items-center text-2xl lg:text-4xl w-full ${locale === "fa" ? "rtl" : "ltr"}`}>
-            <span className="mr-2">{t("about")}</span> 
+          <h1
+            className={`title flex justify-center items-center text-2xl lg:text-4xl w-full ${
+              locale === "fa" ? "rtl" : "ltr"
+            }`}
+          >
+            <span className="mr-2">{t("about")}</span>
             <span className="text-yellowPrimary">{t("me")}</span>
           </h1>
 
@@ -72,31 +76,30 @@ const AboutMePage = () => {
             <li className="flex justify-center flex-col items-center ">
               <Briefcase size="36" className="text-[#777] text-xl" />
               <span className="my-4 text-4xl font-semibold text-yellowPrimary">
-                4+
+                {locale === "fa" ? "۴+" : "4+"}
               </span>
               <p className=" text-lg font-bold text-grayText dark:text-white">
-                Years Experience
+                {t("years-experience")}
               </p>
             </li>
 
             <li className="flex justify-center flex-col items-center mt-8 md:mt-0">
               <Like1 size="36" className="text-[#777]" />
               <span className="my-4 text-4xl font-semibold text-yellowPrimary">
-                12+
+                {locale === "fa" ? "۹+" : "9+"}
               </span>
               <p className=" text-lg font-bold text-grayText dark:text-white">
-                Done Projects
+                {t("done-projects")}
               </p>
             </li>
 
             <li className="flex justify-center flex-col items-center mt-8 md:mt-0">
               <Happyemoji size="36" className="text-[#777]" />
-
               <span className="my-4 text-4xl font-semibold text-yellowPrimary">
-                17+
+                {locale === "fa" ? "۹+" : "9+"}
               </span>
               <p className=" text-lg font-bold text-grayText dark:text-white">
-                Happy Cutomers
+                {t("happy-customers")}
               </p>
             </li>
           </ul>

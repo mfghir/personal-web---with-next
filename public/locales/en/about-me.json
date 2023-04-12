@@ -25,5 +25,15 @@
     "web-developer": "Web Developer",
     "web-developer-text": "I started learning in 2019 at the Tehran Technical Complex.",
     "web-designer": "Web Designer",
-    "web-designer-text": "I began learning this field in 2022."
+    "web-designer-text": "I began learning this field in 2022.",
+
+    "university":"University",
+    "university-text":"I studied Insurance Management at South Tehran Branch of Azad University.",
+    "high-school" : "High School",
+    "high-school-text" : "Experimental field",
+
+    "years-experience":"Years Experience",
+    "done-projects": "Done Projects",
+    "happy-customers":"Happy Customers"
+
 }
