@@ -83,15 +83,15 @@ const FilterBtn = ({ setActiveFilter, activeFilter, setFilterWork, works }) => {
         }`}
       >
         {t("ui")}
+      </div>
 
-        <div
-          onClick={() => setActiveFilter("Etc")}
-          className={`mr-4 cursor-pointer hover:text-yellowPrimary duration-300 ${
-            activeFilter === "Etc" ? "text-yellowPrimary" : ""
-          }`}
-        >
-          {t("etc")}
-        </div>
+      <div
+        onClick={() => setActiveFilter("Etc")}
+        className={`mr-4 cursor-pointer hover:text-yellowPrimary duration-300 ${
+          activeFilter === "Etc" ? "text-yellowPrimary" : ""
+        }`}
+      >
+        {t("etc")}
       </div>
     </div>
   );

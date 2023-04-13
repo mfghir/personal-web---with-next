@@ -1,0 +1,24 @@
+{
+    "get": "Get",
+    "in-touch": "In Touch",
+    "phone": "Phone",
+    "address": "Address",
+    "address-text": "Tehran, Iran",
+    "email": "Email",
+    "socials" :"Socials",
+    "feel-free":"Feel free to drop me a line",
+    "feel-free-text":"If you have any suggestion, project or even you want to say Hello.. please fill out the form below and I will reply you shortly.",
+    "name":"Name",
+    "message":"Message",
+    "send":"Send",
+
+    "errorNameOne": "Entering a name is required",
+    "errorNameTwo": "The name must be more than two letters",
+    "errorEmailOne": "Email is required",
+    "errorEmailTwo": "Invalid email",
+    "errorMessageOne": "Entering a message is required",
+    "errorMessageTwo": "The message entered is not sufficient",
+  
+    "toastSucc": "Message sent successfully 👍",
+    "toastErr": "❌Error sending"
+}

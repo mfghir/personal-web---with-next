@@ -1,19 +1,11 @@
-import {
-  CloseCircle,
-  Messages1,
-  Call,
-  Sms,
-  Map,
-  Instagram,
-  Send,
-  Dribbble,
-} from "iconsax-react";
+import { CloseCircle, Messages1, Call, Sms, Map } from "iconsax-react";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+
 import Form from "../common/Form";
 import Link from "next/link";
 import Image from "next/image";
 
-import { ImTelegram, ImGithub, ImCodepen, ImLinkedin2 } from "react-icons/im";
-import { BsGithub, BsTelegram, BsInstagram } from "react-icons/bs";
 import {
   FiSend,
   FiInstagram,
@@ -22,7 +14,11 @@ import {
   FiCodepen,
   FiDribbble,
 } from "react-icons/fi";
+
 const ContactPage = () => {
+  const { t } = useTranslation("contact");
+  const { locale } = useRouter();
+
   return (
     <section className="min-h-screen h-full p-2 md:p-4 lg:flex lg:justify-between lg:h-[calc(100vh-56px)] ">
       <Link href="/" className="text-4xl right-9 top-16 fixed z-50">
@@ -39,9 +35,13 @@ const ContactPage = () => {
       </div>
 
       <section className="section-container">
-        <h1 className="title flex justify-center items-center text-2xl lg:text-4xl w-full">
-          <span className="mr-2">Get</span>
-          <span className="text-yellowPrimary">In Touch</span>
+        <h1
+          className={`title flex justify-center items-center text-2xl lg:text-4xl w-full ${
+            locale === "fa" ? "rtl" : "ltr"
+          }`}
+        >
+          <span className="mx-2">{t("get")}</span>
+          <span className="text-yellowPrimary">{t("in-touch")}</span>
         </h1>
 
         <div className="title-line flex justify-center items-center my-7 w-full">
@@ -53,23 +53,28 @@ const ContactPage = () => {
         </div>
 
         <div className="md:flex md:justify-between">
-          <section className="bg-[#f2f2f2] dark:bg-neutral-900 border-[1px] border-[#ddd] dark:border-[#333] p-6">
+          <section
+            className={`bg-[#f2f2f2] dark:bg-neutral-900 border-[1px] border-[#ddd] dark:border-[#333] p-6   
+            ${locale === "fa" ? "rtl" : "ltr"}`}
+          >
             <div className="">
               <h4 className="text-yellowPrimary text-xl font-semibold">
-                Phone
+                {t("phone")}
               </h4>
               <p className="flex justify-start items-center mt-3 text-grayText dark:text-white">
-                <Call className="" />
-                <span className="ml-2 ">[+98] 922 458 5055</span>
+                <Call />
+                <span className={`mx-2 ${locale === "fa" ? "ltr" : ""}`}>
+                  {locale === "fa" ? "+۹۸ ۹۲۲ ۴۵۸ ۵۰۵۵" : "+98 922 458 5055"}
+                </span>
               </p>
             </div>
 
             <div className="mt-4">
               <h4 className="text-yellowPrimary text-xl font-semibold">
-                Email
+                {t("email")}
               </h4>
               <p className="flex justify-start items-center flex-wrap mt-3 text-grayText dark:text-white">
-                <Sms className="" />
+                <Sms />
                 <span className="ml-2 text-clip">
                   fatemeghafari77[@gmail].com
                 </span>
@@ -78,17 +83,17 @@ const ContactPage = () => {
 
             <div className="mt-4">
               <h4 className="text-yellowPrimary text-xl font-semibold">
-                Address
+                {t("address")}
               </h4>
               <p className="flex justify-start items-center mt-3 text-grayText dark:text-white">
-                <Map className="" />
-                <span className="ml-2 ">Tehran, Iran</span>
+                <Map />
+                <span className="mx-2 ">{t("address-text")}</span>
               </p>
             </div>
 
             <div className="mt-4">
               <h4 className="text-yellowPrimary text-xl font-semibold">
-                Socials
+                {t("socials")}
               </h4>
               <ul className="flex justify-start items-center mt-3 text-grayText dark:text-white">
                 <li className="mr-2 text-2xl hover:text-yellowPrimary duration-300">
@@ -145,13 +150,9 @@ const ContactPage = () => {
             </div>
           </section>
 
-          <section className="text-grayText dark:text-white my-7 md:my-0 md:px-5">
-            <h3 className="font-bold text-lg">Feel free to drop me a line</h3>
-            <p className="font-normal text-sm leading-6 my-4">
-              If you have any suggestion, project or even you want to say
-              Hello.. please fill out the form below and I will reply you
-              shortly.
-            </p>
+          <section className={`text-grayText dark:text-white my-7 md:my-0 md:px-5 ${locale === "fa" ? "rtl":"ltr" }`}>
+            <h3 className="font-bold text-lg"> {t("feel-free")}</h3>
+            <p className="font-normal text-sm leading-6 my-4">{t("feel-free-text")}</p>
             <Form />
           </section>
         </div>

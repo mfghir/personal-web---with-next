@@ -1,0 +1,22 @@
+{
+    "get": "내게",
+    "in-touch": "연락하세요",
+    "phone": "전화번호",
+    "address": "주소",
+    "address-text": "이란, 테헤란",
+    "email": "이메일",
+    "socials": "에스엔에스",
+    "feel-free": "편하게 연락주세요",
+    "feel-free-text": "의견이나 프로젝트를 가지고 있거나 인사를 하고 싶다면 아래 양식을 작성해주세요. 곧 답장 드리겠습니다.",
+    "name": "이름",
+    "message": "메시지",
+    "send": "보내기",
+    "errorNameOne": "이름을 입력해야 합니다.",
+    "errorNameTwo": "이름은 두 글자 이상이어야 합니다",
+    "errorEmailOne": "이메일은 필수입니다",
+    "errorEmailTwo": "잘못된 이메일",
+    "errorMessageOne": "메시지 입력은 필수입니다",
+    "errorMessageTwo": "입력한 메시지가 충분하지 않습니다",
+    "toastSucc": "메시지가 성공적으로 전송되었습니다 👍",
+    "toastErr": "❌전송 실패"
+}
