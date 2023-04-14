@@ -1,102 +1,66 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
+import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 
-const Form = () => {
+const ContactForm = () => {
   const { t } = useTranslation("contact");
   const { locale } = useRouter();
 
-  const serv = process.env.APP_SERV;
-  const temp = process.env.APP_TEMP;
-  const apiKey = process.env.APP_KEY;
-
-  const [error, setError] = useState({});
-  const [touched, setTouched] = useState({});
-  const [inpVal, setinpVal] = useState({
-    name: "",
-    email: "",
-    message: "",
+  const schema = Yup.object().shape({
+    name: Yup.string().required(t("errorNameOne")).min(2, t("errorNameTwo")),
+    email: Yup.string().email(t("errorEmailOne")).required(t("errorEmailTwo")),
+    message: Yup.string()
+      .required(t("errorMessageOne"))
+      .min(10, t("errorMessageTwo")),
   });
 
-  const changeHandler = (e) => {
-    setinpVal({ ...inpVal, [e.target.name]: e.target.value });
-    console.log(inpVal);
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const touchedHandler = (e) => {
-    setTouched({ ...touched, [e.target.name]: true });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!Object.keys(error).length) {
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    try {
+      await emailjs.send(
+        process.env.APP_SERV,
+        process.env.APP_TEMP,
+        {
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        },
+        process.env.APP_KEY
+      );
       toast.success(t("toastSucc"));
-    } else {
+      reset();
+    } catch (error) {
       toast.error(t("toastErr"));
+      console.error(error);
     }
-
-    emailjs.sendForm(serv, temp, e.target, apiKey).then(
-      (result) => {
-        console.log(result.text);
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
-
-    setinpVal({
-      name: "",
-      email: "",
-      message: "",
-    });
-
-    setTouched({
-      name: false,
-      email: false,
-      message: false,
-    });
+    setIsSubmitting(false);
   };
-
-  if (!inpVal.name.trim()) {
-    error.name = t("errorNameOne");
-  } else if (inpVal.name.length < 2) {
-    error.name = t("errorNameTwo");
-  } else {
-    delete error.name;
-  }
-
-  if (!inpVal.email) {
-    error.email = t("errorEmailOne");
-  } else if (!/\S+@\S+\.\S+/.test(inpVal.email)) {
-    error.email = t("errorEmailTwo");
-  } else {
-    delete error.email;
-  }
-
-  if (!inpVal.message) {
-    error.message = t("errorMessageOne");
-  } else if (inpVal.message.length < 10 && inpVal.message === "") {
-    error.message = t("errorMessageTwo");
-  } else {
-    delete error.message;
-  }
 
   return (
-    <section touched={touched}>
-      <form className="form" onSubmit={handleSubmit}>
+    <>
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <div className="group">
           <input
             className="main-input"
+            id="name"
             type="text"
-            name="name"
-            required
-            value={inpVal.name}
-            onChange={changeHandler}
-            onFocus={touchedHandler}
+            {...register("name")}
           />
           <span className="highlight-span"></span>
           <label
@@ -104,20 +68,17 @@ const Form = () => {
           >
             {t("name")}
           </label>
-          {error.name && touched.name && (
-            <span className="text-[#ff6464]">{error.name}</span>
+          {errors.name && (
+            <span className="text-[#ff6464]">{errors.name.message}</span>
           )}
         </div>
 
         <div className="group">
           <input
             className="main-input"
-            type="email"
-            name="email"
-            required
-            value={inpVal.email}
-            onChange={changeHandler}
-            onFocus={touchedHandler}
+            id="email"
+            type="text"
+            {...register("email")}
           />
           <span className="highlight-span"></span>
           <label
@@ -125,34 +86,26 @@ const Form = () => {
           >
             {t("email")}
           </label>
-          {error.email && touched.email && (
-            <span className="text-[#ff6464]">{error.email}</span>
-          )}
+          {errors.email &&  <span className="text-[#ff6464]">{errors.email.message}</span>}
         </div>
 
         <div className="group">
           <textarea
             className="main-input"
-            type="text"
-            name="message"
-            required
-            value={inpVal.message}
-            onChange={changeHandler}
-            onFocus={touchedHandler}
-            rows="5"
+            id="message"
+            {...register("message")}
           />
           <span className="highlight-span"></span>
           <label
             className={`lebal-email ${locale === "fa" ? "right-0" : "left-0"}`}
           >
-            {t("message")}...
+            {t("message")}
           </label>
-          {error.message && touched.message && (
-            <span className="text-[#ff6464]">{error.message}</span>
-          )}
+          {errors.message &&  <span className="text-[#ff6464]">{errors.message.message}</span>}
         </div>
-
-        <button type="submit">{t("send")}</button>
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? `${t("send")}...` :  t("send")}
+        </button>
       </form>
 
       <style jsx>{`
@@ -252,8 +205,8 @@ const Form = () => {
           color: #ffffff;
         }
       `}</style>
-    </section>
+    </>
   );
 };
 
-export default Form;
+export default ContactForm;

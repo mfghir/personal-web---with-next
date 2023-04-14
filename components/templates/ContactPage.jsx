@@ -14,6 +14,7 @@ import {
   FiCodepen,
   FiDribbble,
 } from "react-icons/fi";
+import ContactForm from "../common/ContactForm";
 
 const ContactPage = () => {
   const { t } = useTranslation("contact");
@@ -153,7 +154,8 @@ const ContactPage = () => {
           <section className={`text-grayText dark:text-white my-7 md:my-0 md:px-5 ${locale === "fa" ? "rtl":"ltr" }`}>
             <h3 className="font-bold text-lg"> {t("feel-free")}</h3>
             <p className="font-normal text-sm leading-6 my-4">{t("feel-free-text")}</p>
-            <Form />
+            {/* <Form /> */}
+            <ContactForm />
           </section>
         </div>
       </section>
