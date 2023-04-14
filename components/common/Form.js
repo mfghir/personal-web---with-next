@@ -10,9 +10,9 @@ const Form = () => {
   const { t } = useTranslation("contact");
   const { locale } = useRouter();
 
-  const serv = process.env.APP_SERV;
-  const temp = process.env.APP_TEMP;
-  const apiKey = process.env.APP_KEY;
+  const serv = process.env.NEXT_PUBLIC_APP_SERV;
+  const temp = process.env.NEXT_PUBLIC_APP_TEMP;
+  const apiKey = process.env.NEXT_PUBLIC_APP_KEY;
 
   const [error, setError] = useState({});
   const [touched, setTouched] = useState({});

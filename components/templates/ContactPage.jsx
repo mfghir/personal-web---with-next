@@ -76,7 +76,7 @@ const ContactPage = () => {
               </h4>
               <p className="flex justify-start items-center flex-wrap mt-3 text-grayText dark:text-white">
                 <Sms />
-                <span className="ml-2 text-clip">
+                <span className="mx-2">
                   fatemeghafari77[@gmail].com
                 </span>
               </p>

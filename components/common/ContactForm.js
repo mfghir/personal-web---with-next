@@ -34,14 +34,14 @@ const ContactForm = () => {
     setIsSubmitting(true);
     try {
       await emailjs.send(
-        process.env.APP_SERV,
-        process.env.APP_TEMP,
+        process.env.NEXT_PUBLIC_APP_SERV,
+        process.env.NEXT_PUBLIC_APP_TEMP,
         {
           name: data.name,
           email: data.email,
           message: data.message,
         },
-        process.env.APP_KEY
+        process.env.NEXT_PUBLIC_APP_KEY
       );
       toast.success(t("toastSucc"));
       reset();

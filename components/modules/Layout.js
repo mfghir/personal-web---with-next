@@ -1,31 +1,9 @@
-import { Noto_Sans_Arabic, Poppins, Gowun_Dodum } from "@next/font/google";
 import { Sun1, Moon } from "iconsax-react";
 import Image from "next/image";
 import Link from "next/link";
+
 import { useRouter } from "next/router";
-
 import { useEffect, useState } from "react";
-
-const notoSansArabic = Noto_Sans_Arabic({
-  variable: "--font-noto-sans-arabic",
-  display: "swap",
-  subsets: ["arabic"],
-  weight: ["400"],
-});
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  display: "swap",
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-const gowunDodum = Gowun_Dodum({
-  variable: "--font-gowun-dodum",
-  display: "swap",
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 function Layout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
@@ -86,15 +64,14 @@ function Layout({ children }) {
       <main
         className={`h-full ${
           locale === "fa"
-            ? notoSansArabic.variable
+            ? "font-sans-fa"
             : locale === "en"
-            ? poppins.variable
-            : gowunDodum.variable
+            ? "font-sans-en"
+            : "font-sans-ko"
         }`}
       >
         {children}
       </main>
-      {/* <main className={locale === "fa" ? "font-notoSansArabic":""}>{children}</main> */}
     </div>
   );
 }
