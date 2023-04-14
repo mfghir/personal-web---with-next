@@ -17,7 +17,7 @@ module.exports = {
         grayText: "#656c6d;",
       },
       fontFamily: {
-        "sans-fa": ["Noto Sans Arabic", "sans-serif"],
+        "sans-fa": ["Vazir", "sans-serif"],
         "sans-en": ["Poppins", "sans-serif"],
         "sans-ko": ["Gowun Dodum", "sans-serif"],
       },
