@@ -2,11 +2,7 @@ import PortfolioPage from "@/components/templates/PortfolioPage";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Portfolio = ({ works }) => {
-  return (
-    <>
-      <PortfolioPage works={works} />
-    </>
-  );
+  return <PortfolioPage works={works} />;
 };
 
 export default Portfolio;
@@ -23,8 +19,10 @@ export async function getStaticProps({ locale }) {
   // }
 
   return {
-    props: { works: data, ...(await serverSideTranslations(locale, ["portfolio"])) },
+    props: {
+      works: data,
+      ...(await serverSideTranslations(locale, ["portfolio"])),
+    },
     revalidate: 24 * 60 * 60,
-   
   };
 }

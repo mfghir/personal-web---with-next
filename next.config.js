@@ -8,11 +8,6 @@ const nextConfig = {
   images: {
     domains: ["i.postimg.cc"],
   },
-  // env: {
-  //   APP_SERV: "service_mvy485h",
-  //   APP_TEMP: "template_3unplb2",
-  //   APP_KEY: "ikAgJ0NQP9m1rJohf",
-  // },
 };
 
 module.exports = nextConfig;

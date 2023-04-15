@@ -9,7 +9,6 @@ import FilterBtn from "../modules/FilterBtn";
 import { useTranslation } from "next-i18next";
 // import { useRouter } from "next/router";
 
-
 const PortfolioPage = ({ works }) => {
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
@@ -17,13 +16,16 @@ const PortfolioPage = ({ works }) => {
   // const { locale } = useRouter();
 
   return (
-    <section className="min-h-screen lg:h-screen p-2 md:p-4 lg:flex lg:justify-between">
-      <Link href="/" className="text-4xl right-9 top-16 fixed z-50">
-        <CloseCircle className="text-grayText" />
-      </Link>
+    <section className="w-full h-full lg:h-[593px] p-2 md:p-4 lg:flex lg:justify-between relative">
+      
 
-      <div className="hidden lg:block lg:w-2/6 object-fill relative resize lg:h-[calc(100vh-80px)]">
-        <Image className="absolute top-0 left-0" src="https://i.postimg.cc/JnMKt5w0/bg.jpg" alt="bg" fill />
+      <div className="hidden lg:block lg:w-2/6 object-fill relative resize ">
+        <Image
+          className="absolute top-0 left-0"
+          src="https://i.postimg.cc/JnMKt5w0/bg.jpg"
+          alt="bg"
+          fill
+        />
       </div>
 
       <section className="section-container">

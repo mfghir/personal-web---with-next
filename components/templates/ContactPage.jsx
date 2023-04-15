@@ -21,12 +21,10 @@ const ContactPage = () => {
   const { locale } = useRouter();
 
   return (
-    <section className="min-h-screen h-full p-2 md:p-4 lg:flex lg:justify-between lg:h-[calc(100vh-56px)] ">
-      <Link href="/" className="text-4xl right-9 top-16 fixed z-50">
-        <CloseCircle className="text-grayText" />
-      </Link>
+    <section className="w-full h-full lg:h-[593px] p-2 md:p-4 lg:flex lg:justify-between relative">
+    
 
-      <div className="hidden lg:block lg:w-2/6 object-fill relative resize h-[calc(100vh-80px)]">
+      <div className="hidden lg:block lg:w-2/6 object-fill relative resize">
         <Image
           className="absolute top-0 left-0 "
           src="https://i.postimg.cc/JnMKt5w0/bg.jpg"

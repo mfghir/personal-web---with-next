@@ -19,10 +19,8 @@ const AboutMePage = () => {
   const { locale } = useRouter();
 
   return (
-    <div className="min-h-screen  p-2 md:p-4 lg:flex lg:justify-between">
-      <Link href="/" className="text-4xl right-9 top-16 fixed z-50">
-        <CloseCircle className="text-grayText" />
-      </Link>
+    <div className="w-full h-full lg:h-[593px] p-2 md:p-4 lg:flex lg:justify-between relative">
+
 
       <div className="hidden lg:block lg:w-2/6 object-fill relative resize">
         <Image
