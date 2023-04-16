@@ -20,8 +20,6 @@ const AboutMePage = () => {
 
   return (
     <div className="w-full h-full lg:h-[593px] p-2 md:p-4 lg:flex lg:justify-between relative">
-
-
       <div className="hidden lg:block lg:w-2/6 object-fill relative resize">
         <Image
           className="absolute top-0 left-0"

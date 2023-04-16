@@ -2,23 +2,18 @@ import { CloseCircle, Briefcase } from "iconsax-react";
 import { AiFillGithub, AiFillEye } from "react-icons/ai";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 import FilterBtn from "../modules/FilterBtn";
 import { useTranslation } from "next-i18next";
-// import { useRouter } from "next/router";
 
 const PortfolioPage = ({ works }) => {
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
   const { t } = useTranslation("portfolio");
-  // const { locale } = useRouter();
 
   return (
     <section className="w-full h-full lg:h-[593px] p-2 md:p-4 lg:flex lg:justify-between relative">
-      
-
       <div className="hidden lg:block lg:w-2/6 object-fill relative resize ">
         <Image
           className="absolute top-0 left-0"
