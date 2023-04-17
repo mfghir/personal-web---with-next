@@ -1,14 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
-
-import {
-  CloseCircle,
-  Personalcard,
-  Briefcase,
-  Like1,
-  Happyemoji,
-} from "iconsax-react";
+import { Personalcard, Briefcase, Like1, Happyemoji } from "iconsax-react";
 
 import AboutOne from "../modules/AboutOne";
 import AboutTwo from "../modules/AboutTwo";
@@ -63,7 +55,7 @@ const AboutMePage = () => {
           </section>
 
           {/* ----------------- exprience + skills + education   */}
-          <section className="pt-7 border-y-[1px] border-[#333] w-full lg:flex lg:justify-between lg:py-16 lg:pr-4 ">
+          <section className="py-7 border-y-[1px] border-whitePrimary dark:border-[#333]  w-full lg:flex lg:justify-between lg:py-16 lg:pr-4 ">
             <AboutTwo />
           </section>
 

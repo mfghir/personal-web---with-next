@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import GoTopButton from "../common/GoTopButton";
 
 function Layout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
@@ -27,7 +28,7 @@ function Layout({ children }) {
   }
 
   return (
-    <div className="min-h-screen lg:min-h-fit 2xl:max-w-screen-xl lg:h-fit  lg:mx-auto p-4 bg-[#EFE9E9] dark:bg-neutral-900 lg:overflow-y-hidden text-neutral-900 dark:text-[#EFE9E9]">
+    <div className="min-h-screen 2xl:min-h-fit 2xl:max-w-screen-xl lg:h-fit  lg:mx-auto p-4 bg-[#EFE9E9] dark:bg-neutral-900 lg:overflow-y-hidden text-neutral-900 dark:text-[#EFE9E9]">
       <nav className="flex justify-between items-center mx-3">
         <div className="flex items-center">
           <Link href={``} locale="fa" className="mr-2">
@@ -86,6 +87,7 @@ function Layout({ children }) {
       >
         {children}
       </main>
+      <GoTopButton />
     </div>
   );
 }

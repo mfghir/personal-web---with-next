@@ -1,9 +1,8 @@
-import { CloseCircle, Briefcase } from "iconsax-react";
+import { Briefcase } from "iconsax-react";
 import { AiFillGithub, AiFillEye } from "react-icons/ai";
-
 import Image from "next/image";
-import { useState } from "react";
 
+import { useState } from "react";
 import FilterBtn from "../modules/FilterBtn";
 import { useTranslation } from "next-i18next";
 
@@ -44,38 +43,34 @@ const PortfolioPage = ({ works }) => {
           setActiveFilter={setActiveFilter}
         />
 
-        <div className="w-full flex flex-wrap justify-between">
+        <div className="w-full flex flex-wrap justify-between md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-3">
           {filterWork.map((item) => (
-            <div className="portfolio-item my-5 relative w-full h-[190px]  md:w-[45%]  md:h-60 lg:w-[32%] lg:h-52">
-              <img
+            <div className="portfolio-item my-5 relative w-full h-[190px]  md:h-60 lg:h-52">
+              <Image
                 className="object-cover w-full h-full"
-                // src={`/${item.imgUrl}`}
                 src={item.imgUrl}
                 alt={item.title}
+                fill
               />
               <div className="portfolio-hover">
-                <ul className="flex">
-                  <li>
-                    <a
-                      className="text-white text-2xl hover:text-neutral-900 duration-300 mr-4 inline-block"
-                      href={item.gitLink}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <AiFillGithub />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="text-white text-2xl hover:text-neutral-900 duration-300"
-                      href={item.netlifyLink}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <AiFillEye />
-                    </a>
-                  </li>
-                </ul>
+                <div className="flex">
+                  <a
+                    className="text-white text-3xl hover:text-neutral-900 duration-300 mr-4 inline-block"
+                    href={item.gitLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <AiFillGithub />
+                  </a>
+                  <a
+                    className="text-white text-3xl hover:text-neutral-900 duration-300"
+                    href={item.netlifyLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <AiFillEye />
+                  </a>
+                </div>
                 <p className="w-full text-center text-white font-semibold">
                   {item.description}
                 </p>

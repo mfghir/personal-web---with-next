@@ -216,9 +216,18 @@ const AboutTwo = () => {
             </li>
 
             <li className="w-[35%] mt-4">
-              <span className="text-grayText dark:text-white">
-                React /Redux
-              </span>
+              <span className="text-grayText dark:text-white">React</span>
+              <p className="flex items-center mt-2">
+                <span className="w-3 h-3 mr-1 block bg-yellowPrimary rounded-full"></span>
+                <span className="w-3 h-3 mr-1 block bg-yellowPrimary rounded-full"></span>
+                <span className="w-3 h-3 mr-1 block bg-yellowPrimary rounded-full"></span>
+                <span className="w-3 h-3 mr-1 block border border-yellowPrimary rounded-full"></span>
+                <span className="w-3 h-3 mr-1 block border border-yellowPrimary rounded-full"></span>
+              </p>
+            </li>
+
+            <li className="w-[35%] mt-4">
+              <span className="text-grayText dark:text-white">Redux</span>
               <p className="flex items-center mt-2">
                 <span className="w-3 h-3 mr-1 block bg-yellowPrimary rounded-full"></span>
                 <span className="w-3 h-3 mr-1 block bg-yellowPrimary rounded-full"></span>
