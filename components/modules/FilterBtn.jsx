@@ -16,15 +16,11 @@ const FilterBtn = ({ setActiveFilter, activeFilter, setFilterWork, works }) => {
   }, [activeFilter, setFilterWork, works]);
 
   return (
-    // <section className="overflow-x-hidden">
-
     <div
-      // className={` w-full flex flex-wrap ${locale === "fa" ? "rtl" : "ltr"} `}
       className={` w-full flex flex-nowrap overflow-x-scroll md:overflow-x-hidden ${
         locale === "fa" ? "rtl" : "ltr"
       } `}
     >
-      
       {/* {[ t("all"), t("web"), t("react"), t("js"), t("nextjs") , t("ui") ,t("etc") ].map((item, index) => (
         <div
           key={index}
@@ -83,26 +79,24 @@ const FilterBtn = ({ setActiveFilter, activeFilter, setFilterWork, works }) => {
         {t("nextjs")}
       </div>
 
-      <div
+      {/* <div
         onClick={() => setActiveFilter("UI")}
         className={`cursor-pointer hover:text-yellowPrimary duration-300 whitespace-nowrap 
         ${activeFilter === "UI" ? "text-yellowPrimary" : ""}
         ${locale === "fa" ? "ml-4" : "mr-4"}`}
       >
         {t("ui")}
-      </div>
+      </div> */}
 
       <div
         onClick={() => setActiveFilter("Etc")}
-         className={`cursor-pointer hover:text-yellowPrimary duration-300 whitespace-nowrap 
+        className={`cursor-pointer hover:text-yellowPrimary duration-300 whitespace-nowrap 
         ${activeFilter === "Etc" ? "text-yellowPrimary" : ""}
         ${locale === "fa" ? "ml-4" : "mr-4"}`}
       >
         {t("etc")}
       </div>
     </div>
-    // </section>
-
   );
 };
 

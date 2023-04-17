@@ -50,7 +50,7 @@ const GoTopButton = () => {
           border: none;
           font-size: 22px;
 
-          right: 3%;
+          right: 24px;
           cursor: pointer;
           animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
