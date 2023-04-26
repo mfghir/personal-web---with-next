@@ -52,14 +52,14 @@ const FilterBtn = ({ setActiveFilter, activeFilter, setFilterWork, works }) => {
         {t("web")}
       </div>
 
-      <div
+      {/* <div
         onClick={() => setActiveFilter("Js")}
         className={`cursor-pointer hover:text-yellowPrimary duration-300 whitespace-nowrap 
         ${activeFilter === "Js" ? "text-yellowPrimary" : ""}
         ${locale === "fa" ? "ml-4" : "mr-4"}`}
       >
         {t("js")}
-      </div>
+      </div> */}
 
       <div
         onClick={() => setActiveFilter("React")}
