@@ -88,7 +88,7 @@ const PortfolioPage = ({ works }) => {
         </div>
 
         <FilterBtn
-          works={worksData}
+          works={works}
           setFilterWork={setFilterWork}
           activeFilter={activeFilter}
           setActiveFilter={setActiveFilter}
