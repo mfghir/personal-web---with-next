@@ -35,12 +35,39 @@ const PortfolioPage = ({ works }) => {
     updateData();
   }, []);
 
+  // const likeHandler = async (item) => {
+  //   setLikes((prevLikes) => item.like + 1);
+  //   console.log("item.like", item.like);
+  //   // setClickedBtn(true);
+
+  //   const findId = worksData.filter((test) => test._id === item._id);
+  //   console.log("findId", findId);
+  //   // console.log("worksData._id",worksData);
+  //   // console.log("item._id", item._id);
+  //   // if (works._id === item._id) {
+  //   //   setClickedBtn(true);
+  //   // }
+
+  //   const res = await fetch(`/api/data/${item._id}`, {
+  //     method: "PATCH",
+  //     body: JSON.stringify({ like: likes }),
+  //     headers: { "Content-Type": "application/json" },
+  //   });
+
+  //   const data = await res.json();
+  //   console.log(data);
+  //   updateData();
+  //   // if(data.status === "ok"){
+  //   //   setClickedBtn(true);
+  //   // }
+  // };
+
   const likeHandler = async (item) => {
     setLikes((prevLikes) => item.like + 1);
     console.log("item.like", item.like);
     // setClickedBtn(true);
 
-    const findId = worksData.filter((test) => test._id === item._id);
+    const findId = works.filter((test) => test.id === item.id);
     console.log("findId", findId);
     // console.log("worksData._id",worksData);
     // console.log("item._id", item._id);
@@ -48,7 +75,7 @@ const PortfolioPage = ({ works }) => {
     //   setClickedBtn(true);
     // }
 
-    const res = await fetch(`/api/data/${item._id}`, {
+    const res = await fetch(`https://fatemeweb-api.vercel.app/PortfoliosData/${item.id}`, {
       method: "PATCH",
       body: JSON.stringify({ like: likes }),
       headers: { "Content-Type": "application/json" },
@@ -61,6 +88,8 @@ const PortfolioPage = ({ works }) => {
     //   setClickedBtn(true);
     // }
   };
+
+
 
   return (
     <section className="w-full h-full lg:h-[593px] p-2 md:p-4 lg:flex lg:justify-between relative">
@@ -132,17 +161,16 @@ const PortfolioPage = ({ works }) => {
 
               <div className="mt-2 flex justify-end">
                 <p className="mr-1">{item.like}</p>
-                <button className="" onClick={() => likeHandler(item)}>
+                <button onClick={() => likeHandler(item)}>
                   {/* {clickedBtn === false ? (  */}
                   {item.like === 0 ? (
                     <Heart className="cursor-pointer hover:text-red-500 duration-300" />
                   ) : (
                     <Heart
                       variant="Bold"
-                      //     // aria-disabled={clickedBtn}
-                      className={`cursor-pointer 
-                   `}
                       color="#ef4444"
+                      //     // aria-disabled={clickedBtn}
+                      className={`cursor-pointer  `}
                     />
                   )}
                 </button>
