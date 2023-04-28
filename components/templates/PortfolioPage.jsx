@@ -11,15 +11,15 @@ const PortfolioPage = ({ works }) => {
   const [activeFilter, setActiveFilter] = useState("All");
   const { t } = useTranslation("portfolio");
 
-  const [likes, setLikes] = useState(0);
-  const [clickedBtn, setClickedBtn] = useState(false);
-  const [worksData, setWorksData] = useState([]);
+  // const [likes, setLikes] = useState(0);
+  // const [clickedBtn, setClickedBtn] = useState(false);
+  // const [worksData, setWorksData] = useState([]);
 
-  const updateData = () => {
-    fetch("/api/data").then((res) =>
-      res.json().then((data) => setWorksData(data.data))
-    );
-  };
+  // const updateData = () => {
+  //   fetch("/api/data").then((res) =>
+  //     res.json().then((data) => setWorksData(data.data))
+  //   );
+  // };
 
   // const handleLike = async () => {
   //   const res = await fetch("/api/data", {
@@ -63,23 +63,19 @@ const PortfolioPage = ({ works }) => {
   // };
 
   const likeHandler = async (item) => {
-    const findId = works.filter((test) => test.id === item.id);
-    console.log("findId", findId);
-  
-    const res = await fetch(`https://fatemeweb-api.vercel.app/PortfoliosData/${item.id}`, {
-      method: "PATCH",
-      body: JSON.stringify({ like: item.like + 1 }),
-      headers: { "Content-Type": "application/json" },
-    });
-  
+    const res = await fetch(
+      `https://fatemeweb-api.vercel.app/PortfoliosData/${item.id}`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ like: item.like + 1 }),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
     const data = await res.json();
     console.log(data);
-    setLikes((prevLikes) => prevLikes + 1);
     updateData();
   };
-  
-
-
 
   return (
     <section className="w-full h-full lg:h-[593px] p-2 md:p-4 lg:flex lg:justify-between relative">
@@ -152,14 +148,12 @@ const PortfolioPage = ({ works }) => {
               <div className="mt-2 flex justify-end">
                 <p className="mr-1">{item.like}</p>
                 <button onClick={() => likeHandler(item)}>
-                  {/* {clickedBtn === false ? (  */}
                   {item.like === 0 ? (
                     <Heart className="cursor-pointer hover:text-red-500 duration-300" />
                   ) : (
                     <Heart
                       variant="Bold"
                       color="#ef4444"
-                      //     // aria-disabled={clickedBtn}
                       className={`cursor-pointer  `}
                     />
                   )}
