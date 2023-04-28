@@ -41,6 +41,6 @@ export async function getStaticProps({ locale }) {
       works: data,
       ...(await serverSideTranslations(locale, ["portfolio"])),
     },
-    revalidate: 24 * 60 * 60,
+    // revalidate: 24 * 60 * 60,
   };
 }

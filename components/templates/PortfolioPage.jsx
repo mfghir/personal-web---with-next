@@ -13,13 +13,18 @@ const PortfolioPage = ({ works }) => {
 
   // const [likes, setLikes] = useState(0);
   // const [clickedBtn, setClickedBtn] = useState(false);
-  // const [worksData, setWorksData] = useState([]);
+  // const [worksData, setWorksData] = useState(works);
 
   // const updateData = () => {
-  //   fetch("/api/data").then((res) =>
+  //   fetch("https://fatemeweb-api.vercel.app/PortfoliosData").then((res) =>
   //     res.json().then((data) => setWorksData(data.data))
   //   );
   // };
+
+  //  useEffect(() => {
+  //   updateData();
+  // }, []);
+
 
   // const handleLike = async () => {
   //   const res = await fetch("/api/data", {
@@ -31,10 +36,7 @@ const PortfolioPage = ({ works }) => {
   //   console.log(data);
   // };
 
-  useEffect(() => {
-    updateData();
-  }, []);
-
+ 
   // const likeHandler = async (item) => {
   //   setLikes((prevLikes) => item.like + 1);
   //   console.log("item.like", item.like);
@@ -74,7 +76,7 @@ const PortfolioPage = ({ works }) => {
 
     const data = await res.json();
     console.log(data);
-    updateData();
+    // updateData();
   };
 
   return (
