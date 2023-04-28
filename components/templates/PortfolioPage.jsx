@@ -25,7 +25,6 @@ const PortfolioPage = ({ works }) => {
   //   updateData();
   // }, []);
 
-
   // const handleLike = async () => {
   //   const res = await fetch("/api/data", {
   //     method: "POST",
@@ -36,7 +35,6 @@ const PortfolioPage = ({ works }) => {
   //   console.log(data);
   // };
 
- 
   // const likeHandler = async (item) => {
   //   setLikes((prevLikes) => item.like + 1);
   //   console.log("item.like", item.like);
@@ -150,15 +148,10 @@ const PortfolioPage = ({ works }) => {
               <div className="mt-2 flex justify-end">
                 <p className="mr-1">{item.like}</p>
                 <button onClick={() => likeHandler(item)}>
-                  {item.like === 0 ? (
-                    <Heart className="cursor-pointer hover:text-red-500 duration-300" />
-                  ) : (
-                    <Heart
-                      variant="Bold"
-                      color="#ef4444"
-                      className={`cursor-pointer  `}
-                    />
-                  )}
+                  <Heart
+                    variant="Bold"
+                    className="text-red-500 hover:text-red-300 duration-300 cursor-pointer"
+                  />
                 </button>
               </div>
             </section>
