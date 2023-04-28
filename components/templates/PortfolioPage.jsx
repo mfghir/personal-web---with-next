@@ -63,31 +63,21 @@ const PortfolioPage = ({ works }) => {
   // };
 
   const likeHandler = async (item) => {
-    setLikes((prevLikes) => item.like + 1);
-    console.log("item.like", item.like);
-    // setClickedBtn(true);
-
     const findId = works.filter((test) => test.id === item.id);
     console.log("findId", findId);
-    // console.log("worksData._id",worksData);
-    // console.log("item._id", item._id);
-    // if (works._id === item._id) {
-    //   setClickedBtn(true);
-    // }
-
+  
     const res = await fetch(`https://fatemeweb-api.vercel.app/PortfoliosData/${item.id}`, {
       method: "PATCH",
-      body: JSON.stringify({ like: likes }),
+      body: JSON.stringify({ like: item.like + 1 }),
       headers: { "Content-Type": "application/json" },
     });
-
+  
     const data = await res.json();
     console.log(data);
+    setLikes((prevLikes) => prevLikes + 1);
     updateData();
-    // if(data.status === "ok"){
-    //   setClickedBtn(true);
-    // }
   };
+  
 
 
 
