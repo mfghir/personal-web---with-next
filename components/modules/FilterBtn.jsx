@@ -11,7 +11,7 @@ const FilterBtn = ({ setActiveFilter, activeFilter, setFilterWork, works }) => {
       setFilterWork(works);
       return;
     }
-    const filtered = works.filter((item) => item.title.includes(activeFilter));
+    const filtered = works.filter((item) => item.title?.includes(activeFilter));
     setFilterWork(filtered);
   }, [activeFilter, setFilterWork, works]);
 
