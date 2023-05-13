@@ -79,14 +79,14 @@ const FilterBtn = ({ setActiveFilter, activeFilter, setFilterWork, works }) => {
         {t("nextjs")}
       </div>
 
-      {/* <div
+      <div
         onClick={() => setActiveFilter("UI")}
         className={`cursor-pointer hover:text-yellowPrimary duration-300 whitespace-nowrap 
         ${activeFilter === "UI" ? "text-yellowPrimary" : ""}
         ${locale === "fa" ? "ml-4" : "mr-4"}`}
       >
         {t("ui")}
-      </div> */}
+      </div>
 
       <div
         onClick={() => setActiveFilter("Etc")}

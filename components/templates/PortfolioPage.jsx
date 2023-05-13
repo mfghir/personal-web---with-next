@@ -1,5 +1,5 @@
 import { Briefcase, Heart } from "iconsax-react";
-import { AiFillGithub, AiFillEye } from "react-icons/ai";
+import { AiFillGithub, AiFillEye, AiOutlineDribbble } from "react-icons/ai";
 import Image from "next/image";
 
 import { useEffect, useState } from "react";
@@ -35,47 +35,36 @@ const PortfolioPage = ({ works }) => {
   //   console.log(data);
   // };
 
-  // const likeHandler = async (item) => {
-  //   setLikes((prevLikes) => item.like + 1);
-  //   console.log("item.like", item.like);
-  //   // setClickedBtn(true);
-
-  //   const findId = worksData.filter((test) => test._id === item._id);
-  //   console.log("findId", findId);
-  //   // console.log("worksData._id",worksData);
-  //   // console.log("item._id", item._id);
-  //   // if (works._id === item._id) {
-  //   //   setClickedBtn(true);
-  //   // }
-
-  //   const res = await fetch(`/api/data/${item._id}`, {
-  //     method: "PATCH",
-  //     body: JSON.stringify({ like: likes }),
-  //     headers: { "Content-Type": "application/json" },
-  //   });
-
-  //   const data = await res.json();
-  //   console.log(data);
-  //   updateData();
-  //   // if(data.status === "ok"){
-  //   //   setClickedBtn(true);
-  //   // }
-  // };
-
   const likeHandler = async (item) => {
-    const res = await fetch(
-      `https://fatemeweb-api.vercel.app/PortfoliosData/${item.id}`,
-      {
-        method: "PATCH",
-        body: JSON.stringify({ like: item.like + 1 }),
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    const res = await fetch(`/api/data/${item._id}`, {
+      method: "PATCH",
+      body: JSON.stringify({ like: item.like + 1 }),
+      headers: { "Content-Type": "application/json" },
+    });
 
     const data = await res.json();
     console.log(data);
     // updateData();
+    // if(data.status === "ok"){
+    //   setClickedBtn(true);
+    // }
   };
+
+  // const likeHandler = async (item) => {
+  //   const res = await fetch(
+  //     `https://fatemeweb-api.vercel.app/PortfoliosData/${item.id}`,
+  //     {
+  //       method: "PATCH",
+  //       body: JSON.stringify({ like: item.like + 1 }),
+  //       headers: { "Content-Type": "application/json" },
+  //     }
+  //   );
+
+  //   const data = await res.json();
+  //   console.log(data);
+  //   // if (data.status === "success") router.reload();
+  //   // updateData();
+  // };
 
   return (
     <section className="w-full h-full lg:h-[593px] p-2 md:p-4 lg:flex lg:justify-between relative">
@@ -122,22 +111,36 @@ const PortfolioPage = ({ works }) => {
 
                 <div className="portfolio-hover">
                   <div className="flex">
-                    <a
-                      className="text-white text-3xl hover:text-neutral-900 duration-300 mr-4 inline-block"
-                      href={item.gitLink}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <AiFillGithub />
-                    </a>
-                    <a
-                      className="text-white text-3xl hover:text-neutral-900 duration-300"
-                      href={item.netlifyLink}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <AiFillEye />
-                    </a>
+                    {item.gitLink && (
+                      <a
+                        className="text-white text-3xl hover:text-neutral-900 duration-300 mr-2 inline-block"
+                        href={item.gitLink}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <AiFillGithub />
+                      </a>
+                    )}
+                    {item.netlifyLink && (
+                      <a
+                        className="text-white text-3xl hover:text-neutral-900 duration-300"
+                        href={item.netlifyLink}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <AiFillEye />
+                      </a>
+                    )}
+                    {item.dribbbleLink && (
+                      <a
+                        className="text-white text-3xl hover:text-neutral-900 duration-300 ml-2"
+                        href={item.dribbbleLink}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <AiOutlineDribbble />
+                      </a>
+                    )}
                   </div>
                   <p className="w-full text-center text-white font-semibold">
                     {item.description}

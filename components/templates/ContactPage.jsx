@@ -22,8 +22,6 @@ const ContactPage = () => {
 
   return (
     <section className="w-full h-full lg:h-[593px] p-2 md:p-4 lg:flex lg:justify-between relative">
-    
-
       <div className="hidden lg:block lg:w-2/6 object-fill relative resize">
         <Image
           className="absolute top-0 left-0 "
@@ -74,9 +72,7 @@ const ContactPage = () => {
               </h4>
               <p className="flex justify-start items-center flex-wrap mt-3 text-grayText dark:text-white">
                 <Sms />
-                <span className="mx-2">
-                  fatemeghafari77[@gmail].com
-                </span>
+                <span className="mx-2">fatemeghafari77[@gmail].com</span>
               </p>
             </div>
 
@@ -143,15 +139,28 @@ const ContactPage = () => {
                     <FiCodepen />
                   </a>
                 </li>
-
-                {/* FiDribbble */}
+                <li className="mr-2 text-2xl hover:text-yellowPrimary duration-300">
+                  <a
+                    href="https://dribbble.com/fatemeweb"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FiDribbble />
+                  </a>
+                </li>
               </ul>
             </div>
           </section>
 
-          <section className={`text-grayText dark:text-white my-7 md:my-0 md:px-5 ${locale === "fa" ? "rtl":"ltr" }`}>
+          <section
+            className={`text-grayText dark:text-white my-7 md:my-0 md:px-5 ${
+              locale === "fa" ? "rtl" : "ltr"
+            }`}
+          >
             <h3 className="font-bold text-lg"> {t("feel-free")}</h3>
-            <p className="font-normal text-sm leading-6 my-4">{t("feel-free-text")}</p>
+            <p className="font-normal text-sm leading-6 my-4">
+              {t("feel-free-text")}
+            </p>
             {/* <Form /> */}
             <ContactForm />
           </section>
