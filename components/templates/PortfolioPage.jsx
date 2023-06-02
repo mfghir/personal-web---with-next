@@ -148,7 +148,7 @@ const PortfolioPage = ({ works }) => {
                 </div>
               </div>
 
-              <div className="mt-2 flex justify-end">
+              {/* <div className="mt-2 flex justify-end">
                 <p className="mr-1">{item.like}</p>
                 <button onClick={() => likeHandler(item)}>
                   <Heart
@@ -156,7 +156,7 @@ const PortfolioPage = ({ works }) => {
                     className="text-red-500 hover:text-red-300 duration-300 cursor-pointer"
                   />
                 </button>
-              </div>
+              </div> */}
             </section>
           ))}
         </div>
