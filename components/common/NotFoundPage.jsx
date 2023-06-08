@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NotFoundPage = () => {
   return (
-    <div>
+    <div className="w-full">
       <div className="fon">
         <div className="horizon">
           <div></div>
