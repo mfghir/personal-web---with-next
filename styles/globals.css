@@ -109,7 +109,7 @@
   }
 
   .portfolio-hover{
-    @apply absolute bg-yellowPrimary top-0 left-0 w-full h-full flex justify-center items-center flex-wrap opacity-0 duration-300
+    @apply absolute p-4 bg-yellowPrimary top-0 left-0 w-full h-full flex justify-center items-center flex-wrap opacity-0 duration-300
   }
   .portfolio-item:hover .portfolio-hover{
     @apply opacity-100 

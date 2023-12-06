@@ -8,7 +8,7 @@ import connectDB from "@/utils/connectDB";
 
 const Portfolio = ({ works }) => {
   if (!works || works.length === 0) {
-    return <h2>Loading....</h2>;
+    return <h2 className="w-full h-full text-center flex justify-center items-center">Loading....</h2>;
   }
 
   return <PortfolioPage works={works} />;
@@ -17,30 +17,30 @@ const Portfolio = ({ works }) => {
 export default Portfolio;
 
 export async function getStaticProps({ locale }) {
-  // try {
-  //   await connectDB();
-  //   const works = await Work.find();
-  //   return {
-  //     props: {
-  //       works: JSON.parse(JSON.stringify(works)),
-  //       ...(await serverSideTranslations(locale, ["portfolio"])),
-  //     },
-  //     // revalidate: 24 * 60 * 60,
-  //   };
-  // } catch (err) {
-  //   return {
-  //     notFound: true,
-  //   };
-  // }
+  try {
+    await connectDB();
+    const works = await Work.find();
+    return {
+      props: {
+        works: JSON.parse(JSON.stringify(works)),
+        ...(await serverSideTranslations(locale, ["portfolio"])),
+      },
+      // revalidate: 24 * 60 * 60,
+    };
+  } catch (err) {
+    return {
+      notFound: true,
+    };
+  }
 
-  const res = await fetch("https://fatemeweb-api.vercel.app/PortfoliosData");
-  const data = await res.json();
+  // const res = await fetch("https://fatemeweb-api.vercel.app/PortfoliosData");
+  // const data = await res.json();
 
-  return {
-    props: {
-      works: data,
-      ...(await serverSideTranslations(locale, ["portfolio"])),
-    },
-    // revalidate: 24 * 60 * 60,
-  };
+  // return {
+  //   props: {
+  //     works: data,
+  //     ...(await serverSideTranslations(locale, ["portfolio"])),
+  //   },
+  //   // revalidate: 24 * 60 * 60,
+  // };
 }

@@ -32,13 +32,13 @@ export default async function handler(req, res) {
   // } else
    if (req.method === "PATCH") {
     try {
-      const workData = await Work.findOne({ _id: id });
-      workData.id = data.id;
-      workData.title = data.title;
-      workData.description = data.description;
-      workData.imgUrl = data.imgUrl;
-      workData.gitLink = data.gitLink;
-      workData.netlifyLink = data.netlifyLink;
+      const workData = await Work.updateOne({ _id: id });
+    //   workData.id = data.id;
+    //   workData.title = data.title;
+    //   workData.description = data.description;
+    //   workData.imgUrl = data.imgUrl;
+    //   workData.gitLink = data.gitLink;
+    //   workData.netlifyLink = data.netlifyLink;
       workData.like = data.like;
 
       await workData.save();

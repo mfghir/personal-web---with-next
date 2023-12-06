@@ -42,8 +42,8 @@ const GoTopButton = () => {
           background: #daa520;
           color: #171717;
 
-          width: 30px;
-          height: 30px;
+          width: 36px;
+          height: 36px;
           border-radius: 25px;
 
           outline: none;
